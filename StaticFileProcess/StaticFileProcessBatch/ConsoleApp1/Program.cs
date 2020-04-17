@@ -66,13 +66,13 @@ namespace ConsoleApp1
 
                         if (item.Name.Equals("p") && !string.IsNullOrWhiteSpace(item.InnerText))
                         {
-                            stringBuilder.Append(item.InnerText.Replace('"', '“').Trim() + "<br/>");
+                            stringBuilder.Append("&emsp;" + item.InnerText.Replace('"', '“').Trim() + "<br/><br/>");
                         }
                         if (item.Name.Equals("ul")){
                             foreach (var li in item.ChildNodes) {
                                 if (!string.IsNullOrWhiteSpace(li.InnerText))
                                 {
-                                    stringBuilder.Append(li.InnerText.Replace('"', '“').Trim() + "<br/>");
+                                    stringBuilder.Append("&emsp;" + li.InnerText.Replace('"', '“').Trim() + "<br/><br/>");
                                 }
                             }
                             
