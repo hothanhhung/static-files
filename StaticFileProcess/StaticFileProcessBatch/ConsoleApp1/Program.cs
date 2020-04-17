@@ -140,7 +140,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            var result = CrawlTuVi(DateTime.Now.AddDays(2));
+            var result = CrawlTuVi(DateTime.Now.AddDays(1));
             Console.WriteLine(result);
             result = CrawlTuViBasedMonth(DateTime.Now);
             //Console.ReadLine();
