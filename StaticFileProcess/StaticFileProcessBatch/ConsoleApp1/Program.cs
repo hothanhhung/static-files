@@ -127,14 +127,14 @@ namespace ConsoleApp1
         {
             var congiap = CrawlXemTuVi(GetTuViConGiap(date));
             var cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao(date));
-            return buildJson(congiap, cunghoangDao, DateTime.Now.ToString("yyyyMMdd"));
+            return buildJson(congiap, cunghoangDao, date.ToString("yyyyMMdd"));
         }
 
         private static string CrawlTuViBasedMonth(DateTime date)
         {
             var congiap = CrawlXemTuVi($"https://xemtuvi.mobi/tu-vi-hang-thang/tu-vi-thang-{date.Month}-{date.Year}-dong-phuong-cua-12-con-giap.html");
             var cunghoangDao = CrawlXemTuVi($"https://xemtuvi.mobi/tu-vi-hang-thang/tu-vi-thang-{date.Month}-{date.Year}-tay-phuong-cua-12-cung-hoang-dao.html");
-            return buildJson(congiap, cunghoangDao, DateTime.Now.ToString("yyyyMM"));
+            return buildJson(congiap, cunghoangDao, date.ToString("yyyyMM"));
         }
 
         static void Main(string[] args)
