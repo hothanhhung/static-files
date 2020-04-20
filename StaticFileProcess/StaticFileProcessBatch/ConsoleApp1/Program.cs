@@ -139,11 +139,44 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-
-            var result = CrawlTuVi(DateTime.Now.AddDays(1));
-            Console.WriteLine(result);
-            result = CrawlTuViBasedMonth(DateTime.Now);
+            /*
+                        var result = CrawlTuVi(DateTime.Now.AddDays(1));
+                        Console.WriteLine(result);
+                        result = CrawlTuViBasedMonth(DateTime.Now);*/
             //Console.ReadLine();
+            int days = 1, months = 0;
+            if (args.Length > 0) int.TryParse(args[0], out days);
+            if (args.Length > 1) int.TryParse(args[1], out months);
+
+            var data = Crawl(days, months);
+
+            WriteToFile(data);
+        }
+
+        private static void WriteToFile(string data)
+        {
+            var fileName = $"tuvi_{DateTime.UtcNow.AddHours(7).ToString("yyyyMMddhhmmss")}.txt";
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName))
+            {
+                file.Write(data);
+            }
+        }
+
+        public static string Crawl(int days, int months)
+        {
+            StringBuilder stringBuilder = new StringBuilder("{\n");
+            var date = DateTime.UtcNow.AddHours(7);
+            for (int i = 0; i < months; i++)
+            {
+                var data = CrawlTuViBasedMonth(date.AddMonths(i));
+                stringBuilder.AppendLine($"{data},");
+            }
+            for (int i = 0; i < days; i++)
+            {
+                var data = CrawlTuVi(date.AddDays(i));
+                stringBuilder.AppendLine($"{data},");
+            }
+            return stringBuilder.ToString().Trim().Trim(',') + "\n}";
         }
 
         //https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/
