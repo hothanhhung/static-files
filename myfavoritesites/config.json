@@ -1,5 +1,5 @@
 ﻿{
-  "Version": 2020042102,
+  "Version": 2020042103,
   "DenyLinks": [
 
   ],
@@ -82,7 +82,7 @@
     },
     {
       "Name": "baodatviet.vn",
-      "CSS": ".adsbygoogle, .ads-by-google, [id*='div-gpt-ad'], [id*='gn_delivery'], #ulLatest div, center, .adsbyeclick, #bs_inpage_container, iframe[id*='adm'], iframe[style*='height: 85px'] {display:none !important;}"
+      "CSS": ".adsbygoogle, .ads-by-google, [id*='div-gpt-ad'], [id*='gn_delivery'], #ulLatest div, center, .adsbyeclick, #bs_inpage_container, [id*='adAsia'], div[id*='google_ads'], iframe[id*='adm'], iframe[style*='height: 85px'] {display:none !important;}"
     },
     {
       "Name": "soha.vn",
