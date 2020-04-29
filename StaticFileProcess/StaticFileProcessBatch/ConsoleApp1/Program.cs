@@ -26,62 +26,66 @@ namespace ConsoleApp1
         private static List<string> CrawlXemTuVi(string url)
         {
             var result = new List<string>();
-
-            HttpClient hc = new HttpClient();
-            HttpResponseMessage response = hc.GetAsync(url).Result;
-
-            var pageContents = response.Content.ReadAsStringAsync().Result;
-            HtmlDocument pageDocument = new HtmlDocument();
-            pageDocument.LoadHtml(pageContents);
-            var contentNode = pageDocument.DocumentNode.SelectNodes("//div[@class='text-detail news_content fit-content']").FirstOrDefault();
-            if (contentNode != null)
+            try
             {
-                bool removedUnuseItem = false;
-                var stringBuilder = new StringBuilder();
-                for( int i =0; i < contentNode.ChildNodes.Count - 1; i++)
+                HttpClient hc = new HttpClient();
+                HttpResponseMessage response = hc.GetAsync(url).Result;
+
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var contentNode = pageDocument.DocumentNode.SelectNodes("//div[@class='text-detail news_content fit-content']").FirstOrDefault();
+                if (contentNode != null)
                 {
-                    var item = contentNode.ChildNodes[i];
-                    var style = item.GetAttributeValue("style", "empty");
-                    if (style.Contains("text-align:center", StringComparison.OrdinalIgnoreCase) || style.Contains("text-align:right", StringComparison.OrdinalIgnoreCase)) continue;
-
-                    if (item.Name.Equals("h2"))
+                    bool removedUnuseItem = false;
+                    var stringBuilder = new StringBuilder();
+                    for (int i = 0; i < contentNode.ChildNodes.Count - 1; i++)
                     {
-                        if (stringBuilder.Length > 0)
-                        {
-                            result.Add(stringBuilder.ToString().Trim());
-                            stringBuilder = new StringBuilder();
-                        }
-                        if(!removedUnuseItem)
-                        {
-                            removedUnuseItem = true;
-                        }
-                    }
-                    else if (removedUnuseItem)
-                    {
-                        if (item.InnerText.Contains("---------------"))
-                        {
-                            removedUnuseItem = false;
-                            continue;
-                        }
+                        var item = contentNode.ChildNodes[i];
+                        var style = item.GetAttributeValue("style", "empty");
+                        if (style.Contains("text-align:center", StringComparison.OrdinalIgnoreCase) || style.Contains("text-align:right", StringComparison.OrdinalIgnoreCase)) continue;
 
-                        if (item.Name.Equals("p") && !string.IsNullOrWhiteSpace(item.InnerText))
+                        if (item.Name.Equals("h2"))
                         {
-                            stringBuilder.Append("&emsp;" + item.InnerText.Replace('"', '“').Trim() + "<br/><br/>");
-                        }
-                        if (item.Name.Equals("ul")){
-                            foreach (var li in item.ChildNodes) {
-                                if (!string.IsNullOrWhiteSpace(li.InnerText))
-                                {
-                                    stringBuilder.Append("&emsp;" + li.InnerText.Replace('"', '“').Trim() + "<br/><br/>");
-                                }
+                            if (stringBuilder.Length > 0)
+                            {
+                                result.Add(stringBuilder.ToString().Trim());
+                                stringBuilder = new StringBuilder();
                             }
-                            
+                            if (!removedUnuseItem)
+                            {
+                                removedUnuseItem = true;
+                            }
+                        }
+                        else if (removedUnuseItem)
+                        {
+                            if (item.InnerText.Contains("---------------"))
+                            {
+                                removedUnuseItem = false;
+                                continue;
+                            }
+
+                            if (item.Name.Equals("p") && !string.IsNullOrWhiteSpace(item.InnerText))
+                            {
+                                stringBuilder.Append("&emsp;" + item.InnerText.Replace('"', '“').Trim() + "<br/><br/>");
+                            }
+                            if (item.Name.Equals("ul"))
+                            {
+                                foreach (var li in item.ChildNodes)
+                                {
+                                    if (!string.IsNullOrWhiteSpace(li.InnerText))
+                                    {
+                                        stringBuilder.Append("&emsp;" + li.InnerText.Replace('"', '“').Trim() + "<br/><br/>");
+                                    }
+                                }
+
+                            }
                         }
                     }
+                    result.Add(stringBuilder.ToString().Trim());
                 }
-                result.Add(stringBuilder.ToString().Trim());
             }
-            
+            catch { }
             return result;
         }
 
@@ -116,12 +120,12 @@ namespace ConsoleApp1
                 strBuilder.AppendLine($"	\"MaKet\":\"{cunghoangDao[9]}\",");
                 strBuilder.AppendLine($"	\"BaoBinh\":\"{cunghoangDao[10]}\",");
                 strBuilder.AppendLine($"	\"SongNgu\":\"{cunghoangDao[11]}\"");
-                strBuilder.AppendLine("    }");
+                strBuilder.Append("    }");
 
                 return strBuilder.ToString();
             }
 
-            return "Error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+            return $"\"{dateInString}\": {{\"Error\":\"Error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\"}}";
         }
         private static string CrawlTuVi(DateTime date)
         {
@@ -144,7 +148,7 @@ namespace ConsoleApp1
                         Console.WriteLine(result);
                         result = CrawlTuViBasedMonth(DateTime.Now);*/
             //Console.ReadLine();
-            int days = 1, months = 0;
+            int days = 30, months = 0;
             if (args.Length > 0) int.TryParse(args[0], out days);
             if (args.Length > 1) int.TryParse(args[1], out months);
 
@@ -155,7 +159,7 @@ namespace ConsoleApp1
 
         private static void WriteToFile(string data)
         {
-            var fileName = $"tuvi_{DateTime.UtcNow.AddHours(7).ToString("yyyyMMddhhmmss")}.txt";
+            var fileName = $"tuvi_{DateTime.UtcNow.AddHours(7).ToString("yyyyMMddhhmmss")}.json";
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName))
             {
                 file.Write(data);
