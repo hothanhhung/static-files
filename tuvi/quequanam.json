@@ -1,0 +1,20 @@
+{
+"QueQuanAm": {
+    "So1":{
+		"Ten":"Thượng Xâm",
+		"Am":"Khai thiên khai địa tác lương duyên<br/>Cát lợi lương thời vạn vật nguyên<br/>Nhược đắc thử xâm phi tiểu khả<br/>Nhân hành trung chánh đế hoàng tuyên.",
+		"Dich":"Đất trời tự thuở hông hoang ấy<br/>Ngày tháng tốt lành vạn vật xoay<br/>Người được xâm này là hiếm thấy<br/>Vua liền ban thưởng việc thẳng ngay.",
+		"LoiBan":"Điềm lành mau đến, Cuối năm giờ tốt. Quan Âm giáng bút. Báo trước người hay",
+		"DiemUng":"Bàn cổ sơ khai. Mọi việc điều tốt",
+		"Giai":"Gia đạo cầu phúc, Tự thân có tài, Thu đông đại lợi,<br/>Buôn bán hôn sự thành công, Người đi tới, điền vụ lục súc tốt.<br/>Tìm người gặp, Kiện tụng thành, Vật mất tìm về hướng đông nam<br/>Bệnh thuyên giảm, Phong thủy cát ."
+		},
+    "Backup":{
+		"Ten":"Thượng Xâm",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"Giai":""
+		}
+    }
+}
