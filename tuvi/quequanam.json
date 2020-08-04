@@ -7,7 +7,8 @@
 		"Dich":"Đất trời tự thuở hông hoang ấy<br/>Ngày tháng tốt lành vạn vật xoay<br/>Người được xâm này là hiếm thấy<br/>Vua liền ban thưởng việc thẳng ngay.",
 		"LoiBan":"Điềm lành mau đến, Cuối năm giờ tốt. Quan Âm giáng bút. Báo trước người hay",
 		"DiemUng":"Bàn cổ sơ khai. Mọi việc điều tốt",
-		"Giai":"Gia đạo cầu phúc, Tự thân có tài, Thu đông đại lợi,<br/>Buôn bán hôn sự thành công, Người đi tới, điền vụ lục súc tốt.<br/>Tìm người gặp, Kiện tụng thành, Vật mất tìm về hướng đông nam<br/>Bệnh thuyên giảm. Phong thủy cát."
+		"TichCo": "",
+		"Giai":"Gia đạo cầu phúc, Tự thân có tài, Thu đông đại lợi,<br/>Buôn bán hôn sự thành công, Người đi tới, điền vụ lục súc tốt.<br/>Tìm người gặp, Kiện tụng thành, Vật mất tìm về hướng đông nam<br/>Bệnh thuyên giảm.<br/>Phong thủy cát."
 	},
     {
 		"So": "Số 2",
@@ -16,16 +17,538 @@
 		"Dich":"Tung tăng bơi lội ở ven sông<br/>Chớ ngó trời cao với biển đông<br/>Đợi ngày tỏa rạng thân thay xác<br/>Vượt được long môn mới hóa rồng",
 		"LoiBan":"Phải cố nhẫn nhịn. Không nên nóng vội. Khi thời cơ tới, Công danh sáng tươi",
 		"DiemUng":"Kình ngư chưa biến. Mọi sự nhẫn nhịn chờ thời",
-		"Giai":"Gia đạo bất an. Tự thân mãn nguyện. Cầu tài bất lợi. Hôn sự khó thành, người đi bình an<br/>Điền vụ lục súc bất lợi. Tìm người thấy. Kiện tụng hòa. Vật mất tìm về hướng đông nam. Bệnh cầu khấn thì qua. Phong thủy cát"
+		"TichCo": "",
+		"Giai":"Gia đạo bất an. Tự thân mãn nguyện. Cầu tài bất lợi. Hôn sự khó thành, người đi bình an<br/>Điền vụ lục súc bất lợi. Tìm người thấy. Kiện tụng hòa. Vật mất tìm về hướng đông nam. Bệnh cầu khấn thì qua.<br/>Phong thủy cát"
 	},
     {
-		"So": "backup",
+		"So": "Số 3",
+		"Ten":"Hạ Xâm",
+		"Am":"Lâm phong mạo vũ khứ hoàn hương<br>cánh thị kỳ thân tự yến nhi<br>Hàm đắc nê lai dục tác lũy<br>đáo đầu hủy hoại phục tu nê",
+		"Dich":"Chim én nhỏ bay trong gió bão<br>Tha bùn về xây tổ nên cao<br>Xảy đâu một trận mưa rào<br>Tổ kia tan rã công lao còn gì",
+		"LoiBan":"Sớm tối lo nghĩ. Trăm phương ngàn kế. Nhưng có ngờ đâu. Hao tâm uổng phí",
+		"DiemUng":"Yến tử hàm nê. Mọi việc lao tâm uổng phí",
+		"TichCo": "",
+		"Giai":"Gia đạo tiền hung hậu cát. Tự thân phòng bị. Cầu tài tốt.<br/>Giao dịch thành. Hôn nhân xấu.<br/>Người đi tốt. Điền vụ lục súc có lợi. Kiện tụng có lý. Tìm người gặp. Di dời an.<br/>Vật mất tìm gặp. Bệnh thuyên giảm.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 4",
 		"Ten":"Thượng Xâm",
+		"Am":"Thiên niên cổ kính phục trùng viên<br/>Nữ tái cầu phu nam tái hôn<br/>Tự thử môn đình trùng cải hoán<br/>Cánh thêm phúc lộc tại nhi tôn",
+		"Dich":"Gương xưa đã vở lại liền tròn<br/>Trai cô gái góa hẹn nước non<br/>Cửa nhà cao rông thêm vui vẽ<br/>Phước lộc lưu truyền tới cháu con",
+		"LoiBan":"Đãi cát tìm vàng. Qua bao gian khó. Tuy nhiều lao tâm. Tựu trung hữu ích",
+		"DiemUng":"Cổ kính trùng viên. Mọi sự lao tâm. Có quí nhân giúp",
+		"TichCo": "",
+		"Giai":"Gia đạo bất lợi. Tự thân được tài. Thu đông thịnh vượng. Giao dịch được tốt.<br/>Hôn nhân thành. Người đi tới. Tìm người thấy. Điền vụ khả quan.<br/>Kiện tụng bất lợi. Di dời giữ như cũ. Vật mất tìm chậm thấy. Bệnh làm phúc mới qua.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 5",
+		"Ten":"Xâm Trung",
+		"Am":"Thiết chùy thảo địa yếu cầu tuyền<br/>Nổ lực cầu chi đắc tối nan<br/>Vô ý nga nhiên ngộ tri kỷ<br/>Tương phùng huề thủ thượng thanh thiên",
+		"Dich":"Tìm nguồn suối ngọt ở nơi sâu<br/>Chùy sắt có mà đào được đâu<br/>Bổng nhiên gặp được người tri kỷ<br/>Dắt dìu dạo bước cảnh tiên đào",
+		"LoiBan":"Tâm nguyện muốn làm. Hướng tây khả cầu. Nếu không động thủ. Có mà được đâu",
+		"DiemUng":"Chùy địa cầu tuyền. mọi sự trước khó sau dể",
+		"TichCo": "",
+		"Giai":"Gia đạo cầu phước. Tự thân có tài. Giao dịch hôn nhân hợp. Người đi trể. Tìm người gặp.<br/>Điền vụ nên sớm. Lục súc tổn. Kiện tụng hòa. Di dời cát. Tìm vật:- mất. Bệnh khó khỏi<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 6",
+		"Ten":"Xâm Trung",
+		"Am":"Đầu thân nham hạ điểu đồng cư<br/>Tu thi hoàn tha đại trượng phu<br/>Thập đắc doanh mưu thùy khả đắc<br/>Thông hành thiên địa thử nhân vô",
+		"Dich":"Chim đông dựng tổ mõm non cao<br/>Trông đó rỏ ràng vẫn thanh tao<br/>Đây được doanh mưu người chẳng được<br/>Con đường rộng mở bước đi mau",
+		"LoiBan":"Cuộc sống không giàu. Thân tự thanh cao. Tới thời lợi lạc. Quyền vẫn như nhau",
+		"DiemUng":"Đông điểu đầu nham. Việc chi cũng thuận cát",
+		"TichCo": "",
+		"Giai":"Gia đạo bất lợi. Tự thân cầu tài cát. Giao dịch khó thành. Hôn nhân tốt. Người đi tới.<br/>Điền vụ sớm tốt. Di dời cát. Vật mất tìm gặp. Bệnh dần giảm. Kiện tụng đúng lý.<br/>Phong thủy an"
+	},
+    {
+		"So": "Số 7",
+		"Ten":"Xâm Hạ",
+		"Am":"Bôn ba trở  ngại cách trùng trùng hiểm<br/>Đới thủy đà nê khứ độ san<br/>Cánh dụng tha phương cầu dụng sự<br/>Thiên hương vạn lý vị hồi hoàn",
+		"Dich":"Trước mặt non cao lớp lớp dầy<br/>Dây dưa không quyết bước sao đây<br/>Đất khách muốn mưu làm việc lớn<br/>Quê cũ nghìn xa chẵng thể quay",
+		"LoiBan":"Yên thân thời được. Tiến bộ là khó. Giữ yên như cũ. Đừng ngó cao thêm",
+		"DiemUng":"Đà nê đới thủy. Việc theo cũ là tốt",
+		"TichCo": "",
+		"Giai":"Gia đạo bất lợi. Bản thân thuận lợi. Cầu tài thu đông cát. Giao dịch trung bình.<br/>Hôn nhân chớ dội. Người đi trở  ngại ngại. Điền vụ lục súc bất lợi. Tìm người khó.<br/>Kiện tụng thua. Di dời cát. Vật mất  khó tìm. Bệnh làm phúc mới qua.<br/>Phong thủy bất lợi"
+	},
+    {
+		"So": "Số 8",
+		"Ten":"Xâm Thượng",
+		"Am":"Mậu lâm tòng bá chánh hưng vương<br/>Vũ tuyết mạc vi tổng phong sương<br/>Dị nhật hốt nhiên thành đại dụng<br/>Công thành danh tựu tài đống lương",
+		"Dich":"Rừng sâu tùng bách mọc xanh rì<br/>Mưa bão tuyết sương có xá chi<br/>Mai kia cao lớn cây ngay thẳng<br/>Rường cột thành danh đã đến kỳ",
+		"LoiBan":"Trên lộ hanh thông. Suốt đời ra công. Bội thu thành quả. Gia đạo hưng long",
+		"DiemUng":"Tòng bá tươi tốt. Việc chi có quí nhân phò hộ",
+		"TichCo": "",
+		"Giai":"Gia đạo tốt. Tự thân thuận lợi. Cầu tài trung bình. Giao dịch vượng. Hôn nhân thành.<br/>Điền vụ lợi. Lục súc tổn. Người đi có tin. Tìm người có. Kiện tụng hữu lý.<br/>Di dời cát. Vật mất tìm  có. Bệnh an khương.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 9",
+		"Ten":"Xâm Thượng",
+		"Am":"Phiền quân vật tác tư tâm sự<br/>Thử ý thiên nghi thuyết vấn công<br/>Nhất phiến minh tâm quang kiểu khiết<br/>Uyển như kiểu nguyệt chánh thiên tâm",
+		"Dich":"Đừng có làm chi việc trái lòng<br/>Dâng ý này lên hỏi thánh ông<br/>Tấm lòng son sắt người người tỏ<br/>Ví giữa trời cao trăng sáng trong",
+		"LoiBan":"Trong lòng chánh trực. Thuận lý thuận tình. Thánh vô tư ngữ. Sau cũng phân minh",
+		"DiemUng":"Kiểu nguyệt đương thông.M ọi chuyện quang minh thông suốt",
+		"TichCo": "",
+		"Giai":"Gia đạo cát. Tự thân thuận. Cầu tài trung bình. Giao dịch vượng. Hôn nhân thành.<br/>Người đi động. Điền vụ lợi. Lục suc tổn. Tìm người có. Kiện tụng hữu lý.<br/>Di dời cát. Vật mất cầu phúc thì tìm được. Bệnh được an.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 10",
+		"Ten":"Xâm Trung",
+		"Am":"Thạch tàng vô giá ngọc hòa trân<br/>Chỉ quản tha hương ngoại khách tầm<br/>Uyển tự trì đăng canh mịch hỏa<br/>Bất như thu thập uổng lao tâm",
+		"Dich":"Đá kia ẩn ngọc quí bên trong<br/>Tìm chi xứ lạ mãi mênh mông<br/>Ví tựa cầm đèn chờ lửa tới<br/>sắp đặc đúng rồi khỏi ngóng trông",
+		"LoiBan":"Nhân duyên hội ngộ. Việc chi không thành. Lòng suy nghĩ kỹ. Mới gặp chân lý",
+		"DiemUng":"Cầm đèn chờ lửa. Mọi việc đợi thời mới thành",
+		"TichCo": "",
+		"Giai":"Gia đạo thiếu lợi. Tự thân an. Cầu tài giao dịch khó. Hôn nhân hợp. Người đi động.<br/>Kiện tụng thua. Điền vụ thu tốt. Lục súc khó nuôi. Tìm người thấy. Di dời an.<br/>Vật mất khó tìm. Bệnh thuyên giảm.<br/>Phong thủy trung bình"
+	},
+    {
+		"So": "Số 11",
+		"Ten":"Xâm Thượng",
+		"Am":"Dục cầu thắng sự khả phi thường<br/>Tranh nại thân nhân nhật tạm mang<br/>Đáo đầu cánh tất thành lộc tiển<br/>Qúi nhân chỉ dẫn quí nhân hương",
+		"Dich":"Ham muốn tranh chi việc thắng thua<br/>Nhân duyên mợi sự chớ tranh đua<br/>Có ngày hưu nhỏ nên tên ngắm<br/>Qúi nhân dẫn giúp đến quê xưa",
+		"LoiBan":"Việc có may rủi. Sau lại an nhiên. Như muốn hành sự. Sẽ gặp quí nhân",
+		"DiemUng":"Trong họa có Phúc. Mọi sự được cát lợi",
+		"TichCo": "",
+		"Giai":"Gia đạo đại cát. Tự thân thuận lợi. Cầu tài có. Giao dịch thành. Hôn nhân hợp.<br/>Tìm người có. Người đi trễ. Điền vụ lục súc trung bình. Kiện tụng có lý. Di dời vượng.<br/>Vật mất tìm về hướng đông. Bệnh khó.<br/>Phong thủy cát."
+	},
+    {
+		"So": "Số 12",
+		"Ten":"Xâm thượng",
+		"Am":"Bỉ khứ thái lai chỉ xích gian<br/>Tạm giao quân tử xuất vu san<br/>Nhược phùng hổ thố giai âm tín<br/>Lập chí mang trung sự tức nhàn",
+		"Dich":"Khổ cực sáng tươi cách tấc gang<br/>Tạm đưa người quí vượt đồi ngang<br/>Gặp được Mẹo Dần tin được tốt<br/>Lập thân trong gắp hóa thư nhàn",
+		"LoiBan":"Đổi bố lấy tơ. Buộc hai chân người. Muốn thấy phân minh. Trong tai có phúc",
+		"DiemUng":"Họa trung hữu phúc. Mọi việc tiền hung hậu cát",
+		"TichCo": "",
+		"Giai":"Gia đạo an. Tự thân cát. Cầu tài có. Giao dịch cẩn thận. Hôn nhân thành. Người đi trể.<br/>Điền vụ lợi. Lục súc cẩn thận. Tìm người có tin. Kiện tụng tốt. Di dời theo cũ. Vật mất tìm  có.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 13",
+		"Ten":"Xâm Trung",
+		"Am":"Tự tiểu sanh ư phú quí gia<br/>Nhãn tiền vạn vật tổng xa hoa<br/>Mông quân thí thử kim giác đới<br/>Tứ hải thanh danh định khả khoa",
+		"Dich":"Tự nhỏ sanh ra tại nhà giàu<br/>Trước mắt xa hoa quí xiết bao<br/>Chờ ngày ban thưởng vòng đai ngọc<br/>Thanh thơm bón biển hãy khoe mau",
+		"LoiBan":"Tù nhân được thả. Bệnh tức an nhiên. Qua được long môn. Danh truyền khắp xứ",
+		"DiemUng":"Cữa rồng được thông. Mọi sự đại cát",
+		"TichCo": "La Thông bái sư",
+		"Giai":"Gia đạo tự thân cầu phước. Cầu tài thu đông cát. Giao dịch cẩn thận. Hôn nhân hợp.<br/>Tìm người thấy. Kiện tụng hữu lý. Người đi cầu bảo. Điền vụ lục súc trung bình.<br/>Di dời y cựu. Vật mất tìm về hướng đông. Bệnh an.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 14",
+		"Ten":"Xâm Trung",
+		"Am":"Uyển như tiên hạc xuất phàm lung<br/>Thoát đắc lung phàm lộ lộ thông<br/>Nam bắc đông tây vô trở  ngại cách<br/>Nhậm quân trực thượng cữu tiêu cung",
+		"Dich":"Chim hạc giờ đây đã xổ lồng<br/>Lượn bay tung cánh khắp tây đông<br/>Thênh thang trời rộng đâu ngăn trở<br/>Thẳng đường lên đến cữu tiêu cung",
+		"LoiBan":"Tùy ý chẳng lo. Lộ đã hanh thông. Tùy tâm tự tại. Ung dung thanh nhàn",
+		"DiemUng":"Tiên hạc rời lồng. Mọi việc trước khó sau dể",
+		"TichCo": "Tử Nha từ quan",
+		"Giai":"Gia đạo bất an. Tự thân như nguyện. Cầu tài giao dịch hợp. Người đi gặp. Điền vụ lợi.<br/>Lục súc tổn. Tìm người trở ngại. Kiện tụng hòa. Di dời cát. Vật mất tìm về hướng đông nam.<br/>Bệnh thuyên dứt.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 15",
+		"Ten":"Xâm Trung",
+		"Am":"Hành nhân liệt nhật khí nan thôn<br/>Hốt hữu sự tai vật cận tiền<br/>Điểu phá lâm sào vô sở túc<br/>Khả tầm thâm thụy ổn an thân",
+		"Dich":"Trời trưa nắng nóng khó người đi<br/>Rơi tổ rừng khô chim ở gì<br/>Tìm nơi an giấc an thân lấy<br/>Sự việc chẵng lành bước tới chi",
+		"LoiBan":"Nếu bị người oán. Lúc nào minh oan. Hảo ngọt chớ tin. Giữ như cũ chờ thời",
+		"DiemUng":"Chim tổ rừng sâu. Mọi sự sau như tâm nguyện",
+		"TichCo": "Tô Tân tỏ chí",
+		"Giai":"Gia đạo tiên hung hậu cát. Tự thân cần phòng. Cầu tài cát. Giao dịch thành.<br/>Hôn nhân trở ngại. Người đi thuận. Điền vụ lợi. Lục súc vượng. Tìm người gặp.<br/>Kiện tụng có lý. Bệnh như ý nguyện. Vật mất khó tìm.<br/>Phong thủy cát ."
+	},
+    {
+		"So": "Số 16",
+		"Ten":"Xâm Trung",
+		"Am":"Sầu mi tư lự tạm thời khai<br/>Khải xuất vân tiêu hỷ tự lai<br/>Uyển như phấn thổ trung tàng ngọc<br/>Lương công thiện cử xuất trần ai",
+		"Dich":"Từ đây bỏ dứt mọi ưu phiền<br/>Sắc màu vui vẽ đến liên miên<br/>Như đất bùn kia chôn ngọc quí<br/>Qua tay thợ khéo mãi lưu truyền",
+		"LoiBan":"Chổ được không mất. Trong mất hữu ích. Tiểu nhân gặp ác. Quân tử thuận cát",
+		"DiemUng":"Âm dương hòa hợp. Mọi mưu tính điều tốt",
+		"TichCo": "Diệp mộng Hùng chầu vua",
+		"Giai":"Gia đạo bất lợi. Tự thân thu đông cát. Cầu tài Giao dịch Hôn sự thành. Người đi tới.<br/>Điền vụ cầu bảo. Lục súc bình. Tìm người thấy. Kiện tụng bất lợi. Di dời giữ như cũ.<br/>Vật mất  khó tìm. Bệnh làm phúc mới qua.<br/>Phong thủy an"
+	},
+    {
+		"So": "Số 17",
+		"Ten":"Xâm Trung",
+		"Am":"Mạc thính nhàn ngôn thuyết thị phi<br/>Thần hôn chỉ hảo niệm a di<br/>Nhược tương cuồng thoại vi chân thật<br/>Họa bỉnh như hà chỉ đắc cơ",
+		"Dich":"Nên lo sớm tối niệm a di<br/>Bỏ hết ngoài tai chuyện thị phi<br/>Nếu lời điên dảo cho là thật<br/>Như ăn bánh vẽ có no gì ? .",
+		"LoiBan":"Tâm trung bất định. Siêng đọc kinh văn. Ví như bánh vẽ. Ăn có được chăng",
+		"DiemUng":"Họa bỉnh sung cơ. Mọi việc hư nhiều thật ít.",
+		"TichCo":"Tào Tháo thoại mai chỉ khát",
+		"Giai":"Gia đạo cầu phúc. Tự thân cầu tài. Giao dịch thuận lợi. Hôn nhân trở  ngại. Điền vụ nên sớm.<br/>Lục súc bất lợi. Người đi trể. Tìm người gặp. Kiện tụng hòa. Vật mất tìm về hướng không thấy.<br/>Di dời giữ như cũ. Bệnh hoàn nguyện(cúng trả lễ) thì khỏi.<br/>Phong thủy cát."
+	},
+    {
+		"So": "Số 18",
+		"Ten":"Xâm Thượng",
+		"Am":"Kim điểu trụy tây thố đông thăng<br/>Nhật dạ tuần hoàn chí cổ kim<br/>Tăng đạo đắc tri vô bất lợi<br/>Công thương nông sĩ các tùng tâm",
+		"Dich":"Xưa nay nhật nguyệt mãi tuần hoàn<br/>Đã báo tin vui vạn việc toàn<br/>Các giới tùy tâm mưu nghiệp lớn<br/>Ngày ngày tâm ý mãi hân hoan",
+		"LoiBan":"Trong lòng yên ổn. Việc làm có công. Như tên trên cung. Bay thẳng lên không",
+		"DiemUng":"Âm dương tiêu trường , Mọi việc toại ý",
+		"TichCo":"Tào quốc Cựu thành tiên",
+		"Giai":"Gia đạo an. Tự thân cát. Cầu tài thuận. Giao dịch thành. Hôn nhân hợp. Người đi cát.<br/>Tìm người có. Điền vụ sớm. Lục súc bất lợi. Kiện tụng hữu lý.Vật mất tìm chậm có.<br/>Di dời cát. Bệnh khấn vái thì khỏi.<br/>Phong thủy đại cát."
+	},
+    {
+		"So": "Số 19",
+		"Ten":"Xâm Trung",
+		"Am":"Cấp thủy than đầu phóng thuyền qui<br/>Phong ba tố lãng dục hà vi<br/>Nhược yếu an nhiên cầu ổn tịnh<br/>Đẳng đãi lãng an độ thử nguy",
+		"Dich":"Bãi cạn thuyền về sóng lớp cao<br/>Gió dông ghềnh đá biết thế nào<br/>Đợi ngày yên lặng qua cơn hiểm<br/>Xuôi về quê cũ thẳng đường mau",
+		"LoiBan":"Thuyền gặp nước xiết. Chỗ hiểm đợi thời. Mưu tính việc gì. Có thể thực thi",
+		"DiemUng":"Thuyền gặp bãi cạn. Mọi việc giữ cũ đợi thời",
+		"TichCo":"Quách Tử Nghi phong vương",
+		"Giai":"Gia đạo. Tự thân làm phúc. Cầu tài Giao dịch chưa thành. Hôn nhân chưa tựu.<br/>Người đi tới. Điền vụ cát. Lục súc tổn. Tìm người khó. Kiện tụng hòa. Di dời giữ như cũ.<br/>Vật mất  khó tìm. Bệnh làm phước thì khỏi.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 20",
+		"Ten":"Xâm Trung",
+		"Am":"Đương xuân cữu vũ hỷ khai tinh<br/>Ngọc thố điểu kim tiệm tiệm sinh<br/>Cựu sự tán tiêu tân sự toại<br/>Khán khan nhất khiếu quá long đình",
+		"Dich":"Đương xuân mưa dứt cảnh vui tươi<br/>Trời tỏ trăng trong dần sáng ngời<br/>Chuyện cũ qua đi tin mới đến<br/>Như cá hóa rồng toại ý người",
+		"LoiBan":"Thần phật hộ trì. Vượt khỏi tai nguy. Bình sinh toại chí. Sau sẽ vinh quy",
+		"DiemUng":"Cữu vũ sơ tình. Mọi việc sau như ý",
+		"TichCo":"Khương thái Công ngộ Văn Vương",
+		"Giai":"Gia đạo trung bình. Tự thân cầu phúc. Cầu tài chưa có. Giao dịch đợi thời.<br/>Hôn nhân tùy ý. Điền vụ lục súc trở ngại. Tìm người trể. Vật mất tìm có. Bệnh cầu nguyện thì khỏi"
+	},
+    {
+		"So": "Số 21",
+		"Ten":"Xâm Thượng",
+		"Am":"Âm dương đạo hợp tổng do thiên<br/>Nữ giá nam hôn hỷ tự nhiên<br/>Đản kiến long xà tương hội họp<br/>Hùng hùng nhập mộng hỷ đoàn viên",
+		"Dich":"Trời cao tạo dựng mối duyên nồng<br/>Trai thời cưới vợ gái theo chồng<br/>Như thể rồng mây tương hội ngộ<br/>Hừng hực động phòng thỏa ước mong",
+		"LoiBan":"Mưu vọng tùy tâm. Hôn nhân hòa hợp. Tài lộc tiến tới. Càng lợi điền viên",
+		"DiemUng":"Âm dương đạo hợp. Mọi việc đại cát",
+		"TichCo":"Lý Đán long phụng phối hợp",
+		"Giai":"Gia đạo an. Tự thân lợi. Cầu tài có. Giao dịch thành. Hôn nhân hợp. Người đi tới.<br/>Điền vụ lục súc hưng vượng. Tìm người thấy. Kiện tụng có lý. Di dời xương thịnh.<br/>Vật mất tìm về hướng có. Bệnh thuốc tốt.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 22",
+		"Ten":"Xâm Trung",
+		"Am":"Hạn thời điền lý giai cô cảo<br/>Tạ thiên cam vũ lạc lâm lâm<br/>Thảo mộc quả hoa giai nhuận trạch<br/>Thủy tri nhất vũ trực thiên kim",
+		"Dich":"Hạn lâu vườn ruộng quá khô khan<br/>Trời ban mưa lớn sấm rền vang<br/>Hoa lá cỏ cây xanh sắc thắm<br/>Mưa rơi đúng lúc đáng ngàn vàng",
+		"LoiBan":"Ruộng vườn bội thu. Vận mạng đã tới. Bệnh gặp thuốc hay. Người đi đến đích",
+		"DiemUng":"Hạn gặp mưa rào. Gặp khó có người giúp",
+		"TichCo":"Lục Lang được cứu",
+		"Giai":"Gia đạo cầu an. Tự thân an. Cầu tài đại cát. Giao dịch trở  ngại. Hôn nhân hợp.<br/>Người đi trở ngại ngại. Điền vụ lục súc lợi. Tìm người khó. Kiện tụng thua. Di dời y cựu.<br/>Vật mất tìm về hướng tây. Bệnh thuyên giảm.<br/>Phong thủy an cát"
+	},
+    {
+		"So": "Số 23",
+		"Ten":"Xâm Trung",
+		"Am":"Quế tiên dục bản nhập thiềm cung<br/>Khỉ lự thiên môn bất nhậm quân<br/>Hốt ngộ nhất ban âm tín hảo<br/>Giai tiếu nhân nhân lĩnh đỉnh hoa",
+		"Dich":"Ước mơ quẻ quế quảng hàn cung<br/>Cửa trời diệu vợi nghĩ mông lung<br/>Bổng có tin vui liền báo đến<br/>Lẵng hoa tươi đẹp thưởng trùng trùng",
+		"LoiBan":"Thương mại đại lợi. Làm việc khỏi nguy. Bệnh khỏi Kiện thắng. Việc chi cũng được",
+		"DiemUng":"Thủ bản tiên quế. Mọi việc có quí nhân giúp",
+		"TichCo":"Hoài Đức cầu thân",
+		"Giai":"Gia đạo thiếu an. Tự thân làm phúc. Cầu tài toại ý. Giao dịch hợp. Hôn nhân trở  ngại.<br/>Người đi nguy. Điền vụ lục súc bất lợi. Tìm người khó. Kiện tụng thua.<br/>Di dời thiếu cát lợi. Bệnh được an.<br/>Phong thủy tựu cát ."
+	},
+    {
+		"So": "Số 24",
+		"Ten":"",
+		"Am":"Bất thành luận lý bất thành gia<br/>Thủy tánh si nhân tự lạc hoa<br/>Nhược vấn quân ân tu đắc lực<br/>Đáo đầu phương kiến sự như ma",
+		"Dich":"Người đần bơi nước tựa hoa rơi<br/>Cửa nhà chẳng thiết chạy muôn nơi<br/>Nếu người có ý trao luân lý<br/>Từ đây thêm khó rối tơi bời",
+		"LoiBan":"Đừng nói phải trái. Cần nên kỷ lưỡng. Lòng ngay lẽ thẳng. mới khỏi tai nguy",
+		"DiemUng":"Người khùng cản lối. Mọi việc nên chờ thời",
+		"TichCo":"Ân Giao ngộ sư",
+		"Giai":"Gia đạo bất an. Tự thân nguy hiểm. Cầu tài trở  ngại. Giao dịch khó. Hôn nhân đợi thời.<br/>Điền vụ lục súc đa tai. Người đi khó. Tìm người trở ngại ngại. Kiện tụng thua.<br/>Di dời cát. Bệnh cầu thần. Vật mất khó tìm.<br/>Phong thủy xấu"
+	},
+    {
+		"So": "Số 25",
+		"Ten":"Xâm Thượng",
+		"Am":"Quá liểu ưu nguy sự kỷ trùng<br/>Tùng kim tái lập vĩnh vô không<br/>Khoan tâm tự hữu khoan tâm kế<br/>Đắc ngộ cao nhân lập đại công",
+		"Dich":"Qua rồi ngày tháng âu lo ấy<br/>Tái lập tiền đồ phát tự đây<br/>An dạ rộng đường toan tính kế<br/>Gặp được cao nhân sự nghiệp đầy",
+		"LoiBan":"Việc kiện hữu lý. Bệnh được an toàn. Ra vào mưu tính. Giếng cũ nước tràn",
+		"DiemUng":"Giếng cũ đầy nước. Việc quí nhân giúp mới thành",
+		"TichCo":"Diệu Năng ái chức",
+		"Giai":"Gia đạo trung bình. Tự thân cầu tài. Giao dịch trở  ngại ngại. Hôn nhân hòa hợp.<br/>Kiện tụng hữu lý. Người đi. Tìm người trở  ngại. Điền vụ lục súc bất lợi. Di dời xấu.<br/>Vật mất khó tìm. Bệnh làm  phúc thì khỏi.<br/>Phong thủy bất an"
+	},
+    {
+		"So": "Số 26",
+		"Ten":"Xâm Trung",
+		"Am":"Thượng hạ truyền lai sự chuyễn hư<br/>Thiên biên tiếp đắc nhất phong thư<br/>Thư trung hứa ngã công danh toại<br/>Trực đáo trung thời diệc thị hư",
+		"Dich":"Sau trước có tin tới rất nhanh<br/>Một phong thư viết rỏ rành rành<br/>Hứa rằng mai được công danh toại<br/>Lời kia cuối lại chỉ hư danh",
+		"LoiBan":"Trên dưới phiền lòng. Cầu nhàn bất nhàn. Muốn có công danh. An thân thủ phận",
+		"DiemUng":"Hư danh. Việc hư nhiều thật ít. Thủ phận là tốt",
+		"TichCo":"Chung Ly đắc đạo",
+		"Giai":"Gia đạo cầu phúc. Tự thân an. Cầu tài trở  ngại. Giao dịch hôn nhân bất thành. Người đi có.<br/>Điền vụ trung bình. Lục súc nuôi tốt. Tìm người hướng tây. Kiện tụng thua.<br/>Di dời giữ như cũ. Vật mất  khó tìm. Bệnh cầu khấn thì khỏi.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 27",
+		"Ten":"Xâm Trung",
+		"Am":"Nhất mưu nhất dụng nhất phiên thư<br/>Bất cảm vi tiền lự hậu tư<br/>Thời đáo quí nhân tương trợ lực<br/>Như sơn tường lập khả an cư",
+		"Dich":"Một quyển sách dầy nghĩ dụng mưu<br/>Không dám tiến hành bởi rối mù<br/>Thời tới quí nhân ra giúp sức<br/>Dựa tường núi chắc để an cư",
+		"LoiBan":"Đổi cũ thành mới. Hoa lạnh gặp xuân. Trước thì trì trệ. Nay được thanh tâm",
+		"DiemUng":"Nhà tốt tường vững. Việc phải ổn thân mà làm. Mới không nguy hiểm",
+		"TichCo":"Lưu Cơ can chủ",
+		"Giai":"Gia đạo an. Tự thân cát. Cầu tài có. Giao dịch khó. Hôn nhân trở ngại. Người đi trễ.<br/>Tìm người khó Điền vụ được. Lục súc lợi. Kiện tụng hòa. Di dời cát. Vật mất  khó tìm.<br/>Bệnh thuyên giảm.<br/>Phong thủy y cựu đại cát"
+	},
+    {
+		"So": "Số 28",
+		"Ten":"Xâm Hạ",
+		"Am":"Đông biên nguyệt thượng chánh thuyền quyên<br/>Khoảnh khắc vân già diệc ám hôn<br/>Hoạt hữu viên thời hoàn hữu khuyết<br/>Cánh ngôn phi giả diệc nhàn ngôn",
+		"Dich":"Trăng lên trong sáng ở phương đông<br/>Bổng mây che khuất tối mênh mông<br/>Trăng có khi tròn rồi lại khuyết<br/>Nói lời sai trái cũng bằng không",
+		"LoiBan":"Trăng bị mây che. Không nên nghi hoặt. Chờ lúc mây tan. Tức thì sáng tỏ",
+		"DiemUng":"Trăng bị mây che. Mọi việc mịch mờ chưa định",
+		"TichCo":"Lý Hậu tìm Bao Công",
+		"Giai":"Gia đạo bất an. Tự thân cầu khấn. Cầu tài trở ngại. Giao dịch cát. Người đi trể.<br/>Điền vụ lục súc bất lợi. Hôn nhân không hợp. Tìm người khó. Kiện tụng thua.<br/>Di dời y cựu. Vật mất tìm về hướng tây. Bệnh khó hết.<br/>Phong thủy thay đổi"
+	},
+    {
+		"So": "Số 29",
+		"Ten":"Xâm Trung",
+		"Am":"Bảo kiếm xuất hạp diệu quang minh<br/>Tại hạp dĩ nhiên bất nhạ trần<br/>Kim đắc quí nhân đề xuất hiện<br/>Hữu uy hữu thế chúng nhân khâm",
+		"Dich":"Kiếm trong tráp đâu ai biết quí<br/>Tuốt ra ngoài tỏa sáng uy nghi<br/>Nay được cao nhân thi triển tốt<br/>Anh hùng trên thế có ai bì",
+		"LoiBan":"Kiếm ra khởi tráp. Hào quang vạn lý. Qúi nhân chỉ dẫn. Xinh đẹp vô cùng",
+		"DiemUng":"Bảo kiếm ra tráp. Mọi việc có uy thế",
+		"TichCo":"Triệu Tử Long cứu A Đẩu",
+		"Giai":"Gia đạo cầu phúc. Tự thân cát. Cầu tài lợi. Giao dịch thành. Hôn nhân các. Người đi trể.<br/>Điền vụ có. Lục súc tổn. Tìm người thấy. Kiện tụng hòa. Di dời hưng vượng.<br/>Vật mất tìm về hướng nam. Bệnh khấn nguyện thì khỏi.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 30",
+		"Ten":"Xâm Trung",
+		"Am":"Khuyến quân thiết vật hướng tha cầu<br/>Tự hạc phi lai ám tiễn đầu<br/>Nhạ khứ thải tân xà tại thảo<br/>Khủng tao độc khẩu dã ưu sầu",
+		"Dich":"Khuyên ai đừng nghĩ tới mà hay<br/>Như thân chim hạc cản tên bay<br/>Rắn ẩn lối đi khi nhặt cũi<br/>Chạm rồi nọc độc sẽ bi ai",
+		"LoiBan":"Cắn răng ngậm miệng. Đừng nghĩ việc chi. Làm trái lương tâm. Tự hại đến mình",
+		"DiemUng":"An phận thủ kỷ. Mọi việc cẩn thận phòng bị",
+		"TichCo":"Kỳ Bàn đại hội",
+		"Giai":"Gia đạo an. Tự thân bình. Cầu tài đợi thời. Giao dịch trể. Hôn nhân chậm hứa.<br/>Người đi tìm người trở ngại. Lục giáp lo. Lục súc điền vụ bất lợi. Di dời giữ như cũ.<br/>Vật mất  khó tìm. Bệnh khó hết.<br/>Phong thủy đại cát"
+	},
+    {
+		"So": "Số 31",
+		"Ten":"Xâm Trung",
+		"Am":"Thanh tịnh vô ưu tọa xứ nhàn<br/>Khất hạ thân tâm bất dụng mang<br/>Bảo hậu ngật trà thời tọa ngọa<br/>Tất định bất chiêu oán dử than",
+		"Dich":"Cơm nước đủ đầy cứ thảnh thơi<br/>Nằm ngồi mặc ý mãi vui tươi<br/>Oán hận họa tai nên khéo tránh<br/>An ổn thân tâm hãy đợi thời",
+		"LoiBan":"Giữ như cũ an tâm. Khấn hỏi tiên thần. Đợi khi thời tới. Sự việc ngẩu nhiên",
+		"DiemUng":"Giữ như cũ an nhiên. Mọi việc đợi thời. Sau mới tốt tươi",
+		"TichCo":"Sư Phật Ấn hội Đông Pha",
+		"Giai":"Gia tộc làm phúc thì khỏi. Tự thân an. Cầu tài đợi thời. Giao dịch nên chậm. Hôn nhân hợp.<br/>Người đi tới. Kiện tụng hòa. Điền vụ thu tốt. Lục súc ổn. Tìm người khó. Di dời cát.<br/>Vật mất tìm khó gặp. Bệnh thuyên giảm.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 32",
+		"Ten":"Xâm Trung",
+		"Am":"Tiền trình tra sát định vô nghi<br/>Thạch trung tàng ngọc hữu thùy tri<br/>Nhất triêu lương tượng phân minh phẫu<br/>Thủy giác an nhiên bích ngọc kỳ",
+		"Dich":"Đường tới dò tra chẳng ngại nghi<br/>Đá dấu ngọc kia ai biết gì<br/>Một sớm thợ tài phân cắt đúng<br/>Ngọc bích lộ dần quí xiết chi",
+		"LoiBan":"Của quí trong đá. Người khác sao hay. Tới khi rỏ ràng. Đúng thì mới quí",
+		"DiemUng":"Cắt đá tìm ngọc. Mọi việc điều thành công",
+		"TichCo":"Lưu Bị cầu hiền",
+		"Giai":"Gia đạo trung bình. Tự thân an. Cầu tài lao lực. Giao dịch trở ngại. Hôn nhân thành. Người đi dò. Điền vụ muộn thu. Lục súc vượng. Tìm người thấy. Kiện tụng khó. Di dời cải ý.<br/>Vật mất tìm về hướng tây. Bệnh khó hết.<br/>Phong thủy thay hướng tốt"
+	},
+    {
+		"So": "Số 33",
+		"Ten":"Xâm Trung",
+		"Am":"Nội tàng vô giá bảo hòa trân<br/>Đắc ngọc hà tu ngoại giới tầm<br/>Bất như đẳng đãi cao nhân thức<br/>Khoan tâm do thả cánh khoan tâm",
+		"Dich":"Trân châu vô giá giữ bên trong<br/>Được ngọc cần gì phải ngóng mông<br/>Chi bằng đợi được cao nhân giúp<br/>Lòng yên thanh thảng lại an lòng",
+		"LoiBan":"Trong chứa vàng ngọc. Không cần ngoại tìm. Gặp quí nhân chỉ. Chẳng cần lao tâm",
+		"DiemUng":"Giữ ngọc còn tìm ngoài. Mọi việc đợi thời sau cát lợi",
+		"TichCo":"Giảo Kim mời Nhơn Quí",
+		"Giai":"Gia đạo làm phúc thì khỏi. Tự thân an. Cầu tài phải đợi. Giao dịch trể. Hôn nhân thành.<br/>Người đi trở  ngại. Điền vụ trung bình. Lục súc vượng. Tìm người tốn công. Kiện tụng nhẫn nhịn.<br/>Di dời cát. Vật mất tìm về hướng bắc. Bệnh gặp lương y.<br/>Phong thủy sửa đổi "
+	},
+    {
+		"So": "Số 34",
+		"Ten":"Xâm Trung",
+		"Am":"Hành tàng xuất nhập lễ nghi cung<br/>Ngôn tất trung lương tín tất thông<br/>Tâm bất liễu nhiên thả tịnh triệt<br/>Quang minh hồng nhật chánh đương trung",
+		"Dich":"Ra đường lễ nghĩa nhớ mang theo<br/>Lời nói thẳng ngay chữ tín gieo<br/>Phải biết lui êm khi chẳng rõ<br/>Chờ khi tường tỏ mới qua đèo",
+		"LoiBan":"Trong lòng vô sự. Nước thu trong vắt. Không cần nghi hoặc. Sự tự nhiên thành",
+		"DiemUng":"Hồng nhật đương không. Mọi việc toại ý",
+		"TichCo":"Đào viên kết nghĩa",
+		"Giai":"Gia đạo cát. Tự thân an. Cầu tài hư ảo. Giao dịch hôn nhân hợp. Người đi trở ngại.<br/>Điền vụ bất lợi. Lục súc suy. Tìm người lâu gặp. Kiện tụng thua. Di dời y cựu.<br/>Vật mất khó tìm. Bệnh thuyên giảm.<br/>Phong thủy đại cát"
+	},
+    {
+		"So": "Số 35",
+		"Ten":"Xâm Trung",
+		"Am":"Y quan trùng chỉnh cựu gia phong<br/>Đạo thị vô cùng khước hữu công<br/>Tảo Khứ đương đồ kinh cức thích<br/>Tam nhân nhược nghị tái hòa đồng",
+		"Dich":"Chỉnh trang áo mão giữ gia phong<br/>Lời phải tới cùng chẳng uổng công<br/>Quét sạch chông gai đường bước tới<br/>Ba người tái họp ý tương đồng",
+		"LoiBan":"Không cần lo ngại. Tự có thời tốt. Nếu hỏi đường đi. Trước mặt sẽ tốt",
+		"DiemUng":"Trùng chỉnh y quan. Mọi việc trước khó sau dễ",
+		"TichCo":"Đường Tăng thỉnh kinh",
+		"Giai":"Gia đạo loạn. Tự thân cát. Cầu tài tốt. Giao dịch lợi. Hôn nhân trở ngại. Người đi tới.<br/>Tìm người có. Điền vụ bất lợi. Lục súc hưng vượng. Kiện tụng hữu lý. Di dời an.<br/>Vật mất tìm chậm có. Bệnh cầu khấn thì khỏi.<br/>Phong thủy đại cát"
+	},
+    {
+		"So": "Số 36",
+		"Ten":"Xâm Trung",
+		"Am":"Nhãn tiền bệnh tụng bất tu ưu<br/>Thực địa tư tài tận khả thu<br/>Kháp thị viên hầu kim tỏa thoát<br/>Tự qui sơn động kháp lai du",
+		"Dich":"Tiền đồ bệnh tật chẵng cần lo<br/>Muốn thu tài vật có trời phò<br/>Đời khỉ xích vàng đâu khóa được<br/>Núi cũ quay về sống tự do",
+		"LoiBan":"Thoát qua mọi việc. Phải tự an lòng. Đợi khi thời tới. Tìm đường thẳng ngay",
+		"DiemUng":"Khỉ rừng thoát khóa. Mọi việc trước khó sau dể",
+		"TichCo":"Tương Tử gặp bạn",
+		"Giai":"Gia đạo bất an. Tự thân bình. Cầu tài đại lợi. Giao dịch chờ thời. Hôn nhân chưa thành.<br/>Người đi tới. Tim người có. Điền vụ sung túc. Lục súc bình. Kiện tụng có lý. Di dời cát.<br/>Vật mất tìm về hướng xa. Bệnh lâu an.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 37",
+		"Ten":"Xâm Trung",
+		"Am":"Dục đãi thân an vận thái thời<br/>Phong trung đăng chúc bất tương nghi<br/>Bất như thâu thập thâm đường tọa<br/>Thứ miễn an nhiên tịnh xứ huy",
+		"Dich":"Ngọc quỳnh nơi tối tỏa quang chi<br/>Tựa cữa ngồi nhàn đễ nghĩ suy<br/>Như đèn gặp gió lung lay động<br/>Khang thái an nhiên phải có thì",
+		"LoiBan":"Ở yên an thân. Đợi ngày giờ tốt. Không gây điều xấu. Giữ như cũ khỏi lo",
+		"DiemUng":"Như đèn gặp gió. Mọi việc thủ thường mới tốt",
+		"TichCo":"Lý Tịnh qui sơn",
+		"Giai":"Gia đạo giữ như cũ. Tự thân bình. Cầu tài có. Giao dịch khó. Hôn nhân không hợp.<br/>Kiện tụng hòa. Người đi có tin. Điền vụ thu tốt. Lục súc an. Tìm người gặp. Di dời giữ như cũ.<br/>Bệnh Hung.<br/>Phong thủy không nên sửa"
+	},
+    {
+		"So": "Số 38",
+		"Ten":"Xâm Hạ",
+		"Am":"Nguyệt chiếu thiên thư tịnh xứ kỳ<br/>Hốt tao vân vụ hựu hôn mê<br/>Khoan tâm kỳ đãi vân hà tán<br/>Thử thời canh cải hảo thi vi",
+		"Dich":"Cảnh êm trăng rọi quyển thiên thư<br/>Bổng chốc mây che tối thế ư<br/>Yên lòng chờ đợi tan mây khói<br/>Từ đấy đổi thay được ý như",
+		"LoiBan":"Gia đạo buồn phiền. Nhân khẩu gặp nạn. Khấn làm phúc thì khỏi hộ. Lo bị hao tài",
+		"DiemUng":"Mây khói che trăng. Mọi việc chưa toại. Giữ như cũ thì hơn",
+		"TichCo":"Hà Văn Tú gặp nạn",
+		"Giai":"Gia đạo bất an. Tự thân làm phúc thì khỏi. Cầu tài khó. Giao dịch đợi thời. Hôn nhân khó hơp.<br/>Người đi trở ngại. Điền vụ lục súc tổn. Tìm người gặp. Kiện tụng hòa. Di dời an.<br/>Vật mất khó tìm. Bệnh dần an.<br/>Phong thủy sửa đổi"
+	},
+    {
+		"So": "Số 39",
+		"Ten":"Xâm Hạ",
+		"Am":"Thiên biên tiêu tức thực nan tư<br/>Thiết mạc đa tâm vọng cưỡng cầu<br/>Nhược bả thạch đầu mai tác kính<br/>Tăng tri uổng phí kỷ công phu",
+		"Dich":"Tin tới từ xa khó đoán suy<br/>Nhọc lòng tính toán cố mà chi<br/>Ví đem đá núi mài làm kính<br/>Uổng phí công lao có ích gì",
+		"LoiBan":"Trăm phương dụng kế. Uổng phí công phu. Chi bằng giữ như cũ. Tìm hiểu nguyên do",
+		"DiemUng":"Thủ thường an tịnh. Đợi thời thuận lợi mới làm",
+		"TichCo":"Khương Nữ tầm phu",
+		"Giai":"Gia đạo an. Tự thân đề phòng. Cầu tài bình. Giao dịch trở ngại. Hôn nhân không hợp.<br/>Người đi động. Điền vụ lợi. Lục súc tổn. Tìm người khó. Kiện tụng thua. Di dời bình.<br/>Vật mất tìm không thấy. Bệnh an.<br/>Phong thủy đại cát"
+	},
+    {
+		"So": "Số 40",
+		"Ten":"Xâm Trung",
+		"Am":"Hồng luân tây trụy thố đông thăng<br/>Bá sự dương tiêu nghi trưởng âm<br/>Thị nhược nữ nhân tài vọng dụng<br/>Tăng thêm tài lộc phúc kỳ tâm",
+		"Dich":"Bóng trời lặng dứt trăng hướng đông<br/>Âm thịnh dương suy phải thế không<br/>Nếu thật nữ nhân tài giỏi vậy<br/>Tăng thêm tài lộc phúc thêm hồng",
+		"LoiBan":"Âm lợi nữ nhân. Chẳng hợp nam tử. Nếu có cầu mưu. Tiền hung hậu cát",
+		"DiemUng":"Âm thịnh dương suy. Mọi việc trước khó sau dể",
+		"TichCo":"Võ Tắc Thiên đăng vị",
+		"Giai":"Gia đạo bất lợi. Tự thân làm phúc thì khỏi. Cầu tài đợi thờ. Giao dịch cát. Hôn nhân bất hợp.<br/>Điền vụ lục súc vượng. Người đi trở ngại. Tìm người chưa gặp. Kiện tụng thua. Di dời đại cát.<br/>Vật mất tìm không thấy. Bệnh nhiều lo âu.<br/>Phong thủy cát"
+	},
+    {
+		"So": "Số 41",
+		"Ten":"Xâm Trung",
+		"Am":"Nhận tặc khước vi tác tử tương<br/>Mạc tham nhãn hạ hữu ta lương<br/>Vô hạn hảo ngôn quân ký thủ<br/>Tha niên cánh lự ngộ bi thương",
+		"Dich":"Đừng có nghe chi chuyện ngọt ngào<br/>Nhiều lời hứa ảo chớ tin mau<br/>Kẻ cướp nếu thâu làm nghĩa tử<br/>Sau này ắt gặp chuyện buồn đau",
+		"LoiBan":"Chỉ một việc này. Chớ có tính sai. Khắc ghi trong lòng. Khỏi sanh u sầu",
+		"DiemUng":"Nhận giặc làm con. Mọi việc giả thật lẫn lộn",
+		"TichCo":"Đổng Trác thâu Lữ Bố",
+		"Giai":"Gia đạo bất an. Tự thân bình thường. Cầu tài phải đợi. Giao dịch khó. Hôn nhân chưa hợp.<br/>Người đi tới. Tìm người có. Lục súc an. Điền vụ trung bình. Kiện tụng hòa. Di dời y cựu.<br/>Vật mất tìm không thấy. Bệnh giải trừ.<br/>Phong thủy an"
+	},
+    {
+		"So": "Số 42",
+		"Ten":"Xâm Thượng",
+		"Am":"Quân hoàng thánh hậu tổng vi ân<br/>Phục đãi kỳ nhương vô tổn tăng<br/>Nhất thiết hữu tình giai thụ dụng<br/>Nhân gian thiên thượng đắc kỳ hanh",
+		"Dich":"Thánh thần vua chúa với ân trời<br/>Giúp cho phúc lộc tỏa nơi nơi<br/>Mọi điều lòng thiện ra làm việc<br/>Đất rộng trời cao mới sáng ngời",
+		"LoiBan":"Trời vua ban phước.Sau trước chớ quên. Sớm hôm niệm lễ. Thành tâm khấn cầu",
+		"DiemUng":"Trời ban ân trạch. Mọi việc thành tựu đại cát",
+		"TichCo":"Mục Liên gặp Mẹ",
+		"Giai":"Gia đạo làm phúc thì khỏi. Tự thân đông cát. Cầu tài chưa có. Giao dịch thành. Hôn nhân cát.<br/>Người đi động. Điền vụ lục súc trung bình. Tìm người thấy. Kiện tụng thắng.<br/>Di dời y cũ. Vật mất tìm không gặp. Bệnh dứt.<br/>Phong thủy an"
+	},
+    {
+		"So": "Số 43",
+		"Ten":"Xâm Thượng",
+		"Am":"Thiên địa biến thông vạn vật nguyên<br/>Tự vinh tự dưỡng tự an nhiên<br/>Bao la vạn tượng giai tinh thái<br/>Sự sự như tâm tạ thánh hiền",
+		"Dich":"Đất trời luân chuyển vật còn nguyên<br/>Tự thân vinh diệu tự an nhiên<br/>Các việc từ đây thêm khởi sắc<br/>Thành tâm kính lễ tạ thần tiên",
+		"LoiBan":"Trời sinh vạn vật. Mưu vọng điều không. Phước đức tương trợ. Điềm lành trùng trùng",
+		"DiemUng":"Thiên địa giao hòa. Mọi việc đại cát vô nguy",
+		"TichCo":"Hành Giả đắc đạo",
+		"Giai":"Gia đạo cát. Tự thân an. Cầu tài có. Giao dịch lợi. Hôn nhân hợp. Người đi trở ngại.<br/>Điền vụ lục súc trung bình. Tìm người gặp. Kiện tụng thắng. Di dời lợi.<br/>Vật mất tìm về hướng đông nam. Bệnh làm phúc thì khỏi.<br/>Phong thủy hướng đông và tây cát "
+	},
+    {
+		"So": "Số 44",
+		"Ten":"Xâm Trung",
+		"Am":"Kỳ phùng địch thủ trước tương nghi<br/>Hắc bạch bàn trung vị quyết thì<br/>Giai nhân nhất trước tri thắng bại<br/>Giáo tu tư hữu hảo suy nghi",
+		"Dich":"Bài cờ đen trắng đễ tranh nhau<br/>Công thủ đôi bên bước nước vào<br/>Kỳ phùng địch thủ cần suy tính<br/>Thế trận đúng rồi rõ thấp cao",
+		"LoiBan":"Cầu chuyện trong lòng. Tỷ như chơi cờ. Rỏ rồi thắng bại. Phải dụng tâm cơ",
+		"DiemUng":"Kỳ phùng địch thủ. Mọi việc tốn tâm cơ mới tốt",
+		"TichCo":"Khương Duy xem trận",
+		"Giai":"Gia đạo đại lợi. Tự thân bình ổn. Cầu tài toại ý. Giao dịch lợi. Hôn nhân chưa hợp.<br/>Người đi tìm người tới. Điền vụ bình. Lục súc tổn. Kiện tụng hòa. Di dời thủ cựu.<br/>Vật mất tìm không thấy. Bệnh làm phúc thì khỏi.<br/>Phong thủy giữ như cũ"
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
 		"Am":"",
 		"Dich":"",
 		"LoiBan":"",
 		"DiemUng":"",
+		"TichCo":"",
 		"Giai":""
-		}
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	},
+    {
+		"So": "Số ",
+		"Ten":"",
+		"Am":"",
+		"Dich":"",
+		"LoiBan":"",
+		"DiemUng":"",
+		"TichCo":"",
+		"Giai":""
+	}
     ]
 }
