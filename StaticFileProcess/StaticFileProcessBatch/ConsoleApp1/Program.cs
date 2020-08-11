@@ -23,6 +23,75 @@ namespace ConsoleApp1
             return url;
         }
 
+        private static List<string> CrawlXemTuViEcotownlongthanh(string url)
+        {
+            var result = new List<string>();
+            try
+            {
+                HttpClient hc = new HttpClient();
+                HttpResponseMessage response = hc.GetAsync(url).Result;
+
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var contentNode = pageDocument.DocumentNode.SelectNodes("//div[@class='content-post clearfix']").FirstOrDefault();
+                if (contentNode != null)
+                {
+                    int h2Count = 0;
+                    int h3Count = 0;
+                    var stringBuilder = new StringBuilder();
+                    for (int i = 0; i < contentNode.ChildNodes.Count - 1; i++)
+                    {
+                        var item = contentNode.ChildNodes[i];
+                        var style = item.GetAttributeValue("style", "empty");
+                        if (style.Contains("text-align:center", StringComparison.OrdinalIgnoreCase) || style.Contains("text-align:right", StringComparison.OrdinalIgnoreCase)) continue;
+
+                        if (item.Name.Equals("h2"))
+                        {
+                            h2Count++;
+                            if (stringBuilder.Length > 0)
+                            {
+                                result.Add(stringBuilder.ToString().Trim());
+                                stringBuilder = new StringBuilder();
+                                h3Count = 0;
+                            }
+                        }
+                        if (h2Count < 4)
+                            continue;
+
+                        if(item.Name.Equals("h3"))
+                        {
+                            h3Count++;
+                            stringBuilder.Append("<b>" + item.InnerText.Replace('"', '“').Trim() + "</b><br/>");
+                        }
+                        else if (item.Name.Equals("p") && !string.IsNullOrWhiteSpace(item.InnerText))
+                        {
+                            if (h3Count == 5)
+                            {
+                                foreach(var child in item.ChildNodes)
+                                {
+                                    if (!string.IsNullOrWhiteSpace(child.InnerText))
+                                    {
+                                        stringBuilder.Append("&emsp;" + child.InnerText.Replace('"', '“').Trim() + "<br/>");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                stringBuilder.Append("&emsp;" + item.InnerText.Replace('"', '“').Trim() + "<br/><br/>");
+                            }
+                            if (h3Count == 6 && result.Count == 11)
+                                break;
+                        }
+
+                    }
+                    result.Add(stringBuilder.ToString().Trim());
+                }
+            }
+            catch { }
+            return result;
+        }
+
         private static List<string> CrawlXemTuVi(string url)
         {
             var result = new List<string>();
@@ -143,12 +212,14 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+            var rs = TarotHelper.Parse();
+           // var rs = CrawlXemTuViEcotownlongthanh(@"https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/");
             /*
                         var result = CrawlTuVi(DateTime.Now.AddDays(1));
                         Console.WriteLine(result);
                         result = CrawlTuViBasedMonth(DateTime.Now);*/
             //Console.ReadLine();
-            int days = 30, months = 0;
+            int days = 5, months = 0;
             if (args.Length > 0) int.TryParse(args[0], out days);
             if (args.Length > 1) int.TryParse(args[1], out months);
 
@@ -168,6 +239,7 @@ namespace ConsoleApp1
 
         public static string Crawl(int days, int months)
         {
+            //return CrawlBoiSoAiCap();
             StringBuilder stringBuilder = new StringBuilder("{\n");
             var date = DateTime.UtcNow.AddHours(7);
             for (int i = 0; i < months; i++)
@@ -185,5 +257,70 @@ namespace ConsoleApp1
 
         //https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/
         //https://phongthuyso.vn/tu-vi-thang-5-2020-cua-12-con-giap.html
+
+
+        ////https://phongthuyso.vn/boi-ai-cap.html
+
+        private static string CrawlBoiSoAiCap()
+        {
+            var strBuilder = new StringBuilder();
+
+             strBuilder.AppendLine($"\"BoiSoAiCap\": {{");
+            for (int i = 0; i< 9; i++)
+            {
+                var rs = CrawlBoiSoAiCap((char) ('A'+i));
+                strBuilder.AppendLine($"    \"So{i+1}\":\"{rs}\",");
+            }
+            strBuilder.Append("    }");
+
+            return strBuilder.ToString();
+        }
+
+        private static string CrawlBoiSoAiCap(char name)
+        {
+            try
+            {
+                HttpClient hc = new HttpClient();
+
+                var formContent = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("nameguest", ""+name),
+                    new KeyValuePair<string, string>("option", "com_boi"),
+                    new KeyValuePair<string, string>("view", "aicap"),
+                    new KeyValuePair<string, string>("Itemid", "28")
+                });
+                var url = "https://phongthuyso.vn/boi-ai-cap.html";
+                HttpResponseMessage response = hc.PostAsync($"{url}", formContent).Result;
+
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var contentNode = pageDocument.DocumentNode.SelectNodes("//div[@class='content_xemboi']").Skip(1).FirstOrDefault();
+                if (contentNode != null)
+                {
+                    var stringBuilder = new StringBuilder();
+                    for (int i = 0; i < contentNode.ChildNodes.Count - 2; i++)
+                    {
+                        var item = contentNode.ChildNodes[i];
+                        if (string.IsNullOrEmpty(item.InnerText.Trim())) continue;
+                        if (!item.HasChildNodes || !item.ChildNodes[0].HasChildNodes)
+                        {
+                            stringBuilder.Append("<br/>&emsp;<b>" + item.InnerText + "</b><br/>");
+                        }
+                        else
+                        {
+                            stringBuilder.Append("&emsp;" + item.ChildNodes[0].ChildNodes[0].InnerText + "<br/><br/>");
+                        }
+                    }
+                    return stringBuilder.ToString().Replace("\"", "'").Replace("<br>",string.Empty).Trim();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return string.Empty;
+        }
+
+
     }
 }
