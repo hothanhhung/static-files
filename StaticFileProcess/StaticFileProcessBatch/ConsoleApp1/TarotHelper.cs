@@ -85,7 +85,15 @@ namespace ConsoleApp1
                 var xuoi = contentNode.SelectNodes("//a[starts-with(@href,'https://tarotvnnews.com/dien-giai-xuoi-cua-la-bai')]").First().Attributes["href"].Value;
                 var nguoc = contentNode.SelectNodes("//a[starts-with(@href,'https://tarotvnnews.com/dien-giai-nguoc-cua-la-bai')]").First().Attributes["href"].Value;
 
-                return $"{ ParseContent($"{name}_Xuoi", xuoi)},\n{ParseContent($"{name}_Nguoc", nguoc)}";
+                var strBuilder = new StringBuilder();
+                strBuilder.AppendLine($"{{");
+                strBuilder.AppendLine($"\"Name\": \"{name}\",");
+                strBuilder.AppendLine($"\"Xuoi\": {{{ParseContent($"{name}_Xuoi", xuoi)}}},");
+                strBuilder.AppendLine($"\"Nguoc\": {{{ParseContent($"{name}_Nguoc", nguoc)}	}}");
+                strBuilder.Append("}");
+
+                return strBuilder.ToString();
+
 
             }
             catch (Exception ex)
@@ -111,20 +119,18 @@ namespace ConsoleApp1
                 pageDocument.LoadHtml(pageContents);
                 var contentNode = pageDocument.DocumentNode.SelectNodes("//div[@class='entry']").FirstOrDefault();
 
-                congviec = contentNode.ChildNodes[10].InnerText.Replace("\"", "'");
-                tinhyeu = contentNode.ChildNodes[12].InnerText.Replace("\"", "'");
-                taichinh = contentNode.ChildNodes[14].InnerText.Replace("\"", "'");
-                suckhoe = contentNode.ChildNodes[16].InnerText.Replace("\"", "'");
-                tinhthan = contentNode.ChildNodes[18].InnerText.Replace("\"", "'");
+                congviec = contentNode.ChildNodes[10].InnerText.Replace("\"", "'").Replace("\n", "");
+                tinhyeu = contentNode.ChildNodes[12].InnerText.Replace("\"", "'").Replace("\n", "'");
+                taichinh = contentNode.ChildNodes[14].InnerText.Replace("\"", "'").Replace("\n", "'");
+                suckhoe = contentNode.ChildNodes[16].InnerText.Replace("\"", "'").Replace("\n", "'");
+                tinhthan = contentNode.ChildNodes[18].InnerText.Replace("\"", "'").Replace("\n", "'");
 
-                var strBuilder = new StringBuilder();
-                strBuilder.AppendLine($"\"{name}\": {{");
+                var strBuilder = new StringBuilder("\n");
                 strBuilder.AppendLine($"	\"CongViec \":\"{congviec.Substring(congviec.IndexOf(":") + 1).Trim()}\",");
                 strBuilder.AppendLine($"	\"TinhYeu\":\"{tinhyeu.Substring(tinhyeu.IndexOf(":") + 1).Trim()}\",");
                 strBuilder.AppendLine($"	\"TaiChinh\":\"{taichinh.Substring(taichinh.IndexOf(":") + 1).Trim()}\",");
                 strBuilder.AppendLine($"	\"SucKhoe\":\"{suckhoe.Substring(suckhoe.IndexOf(":") + 1).Trim()}\",");
                 strBuilder.AppendLine($"	\"TinhThan\":\"{tinhthan.Substring(tinhthan.IndexOf(":") + 1).Trim()}\"");
-                strBuilder.Append("    }");
 
                 return strBuilder.ToString();
 
