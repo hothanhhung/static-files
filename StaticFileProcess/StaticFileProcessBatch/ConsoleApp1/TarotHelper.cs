@@ -47,7 +47,6 @@ namespace ConsoleApp1
                                 var href = atag.Attributes["href"].Value;
                                 var name = atag.InnerText;
                                 name = name.Substring(name.IndexOf(":") + 1).Trim();
-                                name = name.ToTitleCase().Replace(" ", "");
                                 var value = KeyValuePair.Create(name, href);
                                 cards.Add(value);
                             }
@@ -59,12 +58,12 @@ namespace ConsoleApp1
             {
             }
 
-            var str = new StringBuilder();
+            var str = new StringBuilder("[");
             foreach (var item in cards)
             {
                 str.AppendLine($"{ParseUrls(item.Key, item.Value)},");
             }
-
+            str.AppendLine("]");
             return str.ToString();
         }
 
@@ -87,6 +86,7 @@ namespace ConsoleApp1
 
                 var strBuilder = new StringBuilder();
                 strBuilder.AppendLine($"{{");
+                strBuilder.AppendLine($"\"Code\": \"{name.ToTitleCase().Replace(" ", "")}\",");
                 strBuilder.AppendLine($"\"Name\": \"{name}\",");
                 strBuilder.AppendLine($"\"Xuoi\": {{{ParseContent($"{name}_Xuoi", xuoi)}}},");
                 strBuilder.AppendLine($"\"Nguoc\": {{{ParseContent($"{name}_Nguoc", nguoc)}	}}");
@@ -126,7 +126,7 @@ namespace ConsoleApp1
                 tinhthan = contentNode.ChildNodes[18].InnerText.Replace("\"", "'").Replace("\n", "'");
 
                 var strBuilder = new StringBuilder("\n");
-                strBuilder.AppendLine($"	\"CongViec \":\"{congviec.Substring(congviec.IndexOf(":") + 1).Trim()}\",");
+                strBuilder.AppendLine($"	\"CongViec\":\"{congviec.Substring(congviec.IndexOf(":") + 1).Trim()}\",");
                 strBuilder.AppendLine($"	\"TinhYeu\":\"{tinhyeu.Substring(tinhyeu.IndexOf(":") + 1).Trim()}\",");
                 strBuilder.AppendLine($"	\"TaiChinh\":\"{taichinh.Substring(taichinh.IndexOf(":") + 1).Trim()}\",");
                 strBuilder.AppendLine($"	\"SucKhoe\":\"{suckhoe.Substring(suckhoe.IndexOf(":") + 1).Trim()}\",");
