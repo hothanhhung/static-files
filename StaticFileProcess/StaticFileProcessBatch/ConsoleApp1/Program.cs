@@ -212,7 +212,7 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            var rs = TarotHelper.Parse();
+            //var rs = TarotHelper.Parse();
            // var rs = CrawlXemTuViEcotownlongthanh(@"https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/");
             /*
                         var result = CrawlTuVi(DateTime.Now.AddDays(1));
@@ -247,7 +247,7 @@ namespace ConsoleApp1
                 var data = CrawlTuViBasedMonth(date.AddMonths(i));
                 stringBuilder.AppendLine($"{data},");
             }
-            for (int i = 0; i < days; i++)
+            for (int i = 3; i < days; i++)
             {
                 var data = CrawlTuVi(date.AddDays(i));
                 stringBuilder.AppendLine($"{data},");
@@ -257,7 +257,7 @@ namespace ConsoleApp1
 
         //https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/
         //https://phongthuyso.vn/tu-vi-thang-5-2020-cua-12-con-giap.html
-
+		// https://tuviso.com/tu-vi-cung-song-ngu-nam-2021.html
 
         ////https://phongthuyso.vn/boi-ai-cap.html
 
