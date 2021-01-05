@@ -15,11 +15,24 @@ namespace ConsoleApp1
             string url = $"https://xemtuvi.mobi/tu-vi-ngay-moi/tu-vi-hang-ngay/xem-boi-tu-vi-{dateOfWeek}-ngay-{date.Day}-{date.Month}-{date.Year}-cua-12-cung-hoang-dao.html";
             return url;
         }
+        private static string GetTuViCungHoangDao2(DateTime date)
+        {
+            string dateOfWeek = date.DayOfWeek == 0 ? "chu-nhat" : $"thu-{(int)date.DayOfWeek + 1}";
+            string url = $"https://xemtuvi.mobi/tu-vi-ngay-{date.Day}-{date.Month}-{date.Year}-cua-12-cung-hoang-dao-{dateOfWeek}.html";
+            return url;
+        }
 
         private static string GetTuViConGiap(DateTime date)
         {
             string dateOfWeek = date.DayOfWeek == 0 ? "chu-nhat" : $"thu-{(int)date.DayOfWeek + 1}";
             string url = $"https://xemtuvi.mobi/tu-vi-ngay-moi/tu-vi-hang-ngay-12-con-giap/tu-vi-ngay-{date.Day}-{date.Month}-{date.Year}-{dateOfWeek}-cua-12-con-giap.html";
+            return url;
+        }
+        
+        private static string GetTuViConGiap2(DateTime date)
+        {
+            string dateOfWeek = date.DayOfWeek == 0 ? "chu-nhat" : $"thu-{(int)date.DayOfWeek + 1}";
+            string url = $"https://xemtuvi.mobi/tu-vi-ngay-{date.Day}-{date.Month}-{date.Year}-cua-12-con-giap-{dateOfWeek}.html";
             return url;
         }
 
@@ -199,7 +212,16 @@ namespace ConsoleApp1
         private static string CrawlTuVi(DateTime date)
         {
             var congiap = CrawlXemTuVi(GetTuViConGiap(date));
+            if(congiap == null || congiap.Count == 0)
+            {
+                congiap = CrawlXemTuVi(GetTuViConGiap2(date));
+            }
+
             var cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao(date));
+            if (cunghoangDao == null || cunghoangDao.Count == 0)
+            {
+                cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao2(date));
+            }
             return buildJson(congiap, cunghoangDao, date.ToString("yyyyMMdd"));
         }
 
@@ -219,7 +241,7 @@ namespace ConsoleApp1
                         Console.WriteLine(result);
                         result = CrawlTuViBasedMonth(DateTime.Now);*/
             //Console.ReadLine();
-            int days = 5, months = 0;
+            int days = 15, months = 0;
             if (args.Length > 0) int.TryParse(args[0], out days);
             if (args.Length > 1) int.TryParse(args[1], out months);
 
@@ -247,7 +269,7 @@ namespace ConsoleApp1
                 var data = CrawlTuViBasedMonth(date.AddMonths(i));
                 stringBuilder.AppendLine($"{data},");
             }
-            for (int i = 3; i < days; i++)
+            for (int i = 0; i < days; i++)
             {
                 var data = CrawlTuVi(date.AddDays(i));
                 stringBuilder.AppendLine($"{data},");
