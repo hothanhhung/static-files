@@ -4,6 +4,9 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Web;
+using System.Globalization;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -33,6 +36,13 @@ namespace ConsoleApp1
         {
             string dateOfWeek = date.DayOfWeek == 0 ? "chu-nhat" : $"thu-{(int)date.DayOfWeek + 1}";
             string url = $"https://xemtuvi.mobi/tu-vi-ngay-{date.Day}-{date.Month}-{date.Year}-cua-12-con-giap-{dateOfWeek}.html";
+            return url;
+        }
+
+        private static string GetTuViConGiap3(DateTime date)
+        {
+            string dateOfWeek = date.DayOfWeek == 0 ? "chu-nhat" : $"thu-{(int)date.DayOfWeek + 1}";
+            string url = $"https://xemtuvi.mobi/tu-vi-{dateOfWeek}-ngay-{date.Day}-{date.Month}-{date.Year}-tu-vi-hang-ngay-12-con-giap.html";
             return url;
         }
 
@@ -211,16 +221,20 @@ namespace ConsoleApp1
         }
         private static string CrawlTuVi(DateTime date)
         {
-            var congiap = CrawlXemTuVi(GetTuViConGiap(date));
+            var congiap = CrawlXemTuVi(GetTuViConGiap3(date));
             if(congiap == null || congiap.Count == 0)
             {
                 congiap = CrawlXemTuVi(GetTuViConGiap2(date));
             }
+            if (congiap == null || congiap.Count == 0)
+            {
+                congiap = CrawlXemTuVi(GetTuViConGiap(date));
+            }
 
-            var cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao(date));
+            var cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao2(date));
             if (cunghoangDao == null || cunghoangDao.Count == 0)
             {
-                cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao2(date));
+                cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao(date));
             }
             return buildJson(congiap, cunghoangDao, date.ToString("yyyyMMdd"));
         }
@@ -234,8 +248,10 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+            //CrawlGioSocTietKhi();
+           // return;
             //var rs = TarotHelper.Parse();
-           // var rs = CrawlXemTuViEcotownlongthanh(@"https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/");
+            // var rs = CrawlXemTuViEcotownlongthanh(@"https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/");
             /*
                         var result = CrawlTuVi(DateTime.Now.AddDays(1));
                         Console.WriteLine(result);
@@ -344,5 +360,108 @@ namespace ConsoleApp1
         }
 
 
+
+        private static void CrawlGioSocTietKhi()
+        {
+            List<DateTime> ngaySoc = new List<DateTime>();
+            List<KeyValuePair<DateTime, string>> tietKhi = new List<KeyValuePair<DateTime, string>>();
+
+            for (int i = 1800; i < 2180; i += 20) //2180
+            {
+                CrawlGioSocTietKhi($"https://www.informatik.uni-leipzig.de/~duc/amlich/DuLieu/Sun-Moon-{i}.html", ngaySoc, tietKhi);
+            }
+
+            var ngaySocBuilder = new StringBuilder("{\n");
+            foreach(var group in ngaySoc.GroupBy(p=>p.Year))
+            {
+                ngaySocBuilder.Append($"\"{group.Key}\": [");
+                for (var i = 0; i < group.Count(); i++)
+                {
+                    var item = group.ElementAt(i);
+                    if (i != 0)
+                    {
+                        ngaySocBuilder.Append(",");
+                    }
+                    ngaySocBuilder.Append($"\"{item.Day.ToString("D2")}-{item.Month.ToString("D2")}\"");
+                }
+                ngaySocBuilder.AppendLine("],");
+            }
+            ngaySocBuilder.Remove(ngaySocBuilder.Length - 3, 1);
+            ngaySocBuilder.AppendLine("}");
+
+            File.WriteAllText(@"ngaysoc.json", ngaySocBuilder.ToString());
+
+            var tietKhiBuilder = new StringBuilder("{\n");
+            foreach (var group in tietKhi.GroupBy(p => p.Key.Year))
+            {
+                tietKhiBuilder.Append($"\"{group.Key}\": [");
+                for (var i = 0; i < group.Count(); i++)
+                {
+                    var item = group.ElementAt(i);
+                    if (i != 0)
+                    {
+                        tietKhiBuilder.Append(",");
+                    }
+                    tietKhiBuilder.Append($"{{\"{item.Key.Day.ToString("D2")}-{item.Key.Month.ToString("D2")}\":\"{item.Value}\"}}");
+                }
+                tietKhiBuilder.AppendLine("],");
+            }
+            tietKhiBuilder.Remove(tietKhiBuilder.Length - 3, 1);
+            tietKhiBuilder.AppendLine("}");
+            File.WriteAllText(@"tietkhi.json", tietKhiBuilder.ToString());
+        }
+
+        private static void CrawlGioSocTietKhi(string url, List<DateTime> ngaySoc, List<KeyValuePair<DateTime, string>> tietKhi)
+        {
+            var result = new List<string>();
+            try
+            {
+                HttpClient hc = new HttpClient();
+                HttpResponseMessage response = hc.GetAsync(url).Result;
+
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var years = pageDocument.DocumentNode.SelectNodes("//table");
+                if (years != null)
+                {
+                    foreach(var yearNode in years)
+                    {
+                        var trs = yearNode.SelectNodes("tr");
+                        if (trs == null || trs.Count < 1) continue;
+                        var year = trs[0].InnerText;
+                        for(var i = 2; i < trs.Count; i++)
+                        {
+                            var child = trs[i];
+                            var tds = child.SelectNodes("td");
+                            if (tds == null || tds.Count < 2 ) continue;
+                            var soc = HttpUtility.HtmlDecode(tds[0].InnerText).Trim();
+                            var tietkhi = HttpUtility.HtmlDecode(tds[1].InnerText.Trim());
+                            var tietkhiItems = tietkhi.Split('-');
+                            if (!string.IsNullOrEmpty(soc))
+                            {
+                                ngaySoc.Add(ParseToDateTime(soc, year));
+                            }
+                            if (tietkhiItems.Count() == 2)
+                            {
+                                tietKhi.Add(new KeyValuePair<DateTime, string>(ParseToDateTime(tietkhiItems[0].Trim(), year), tietkhiItems[1].Trim()));
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex) {
+                Console.WriteLine(ex);
+            }
+        }
+
+
+        private static DateTime ParseToDateTime(string value, string year)
+        {
+            DateTime dateTime;
+            var str = value.Replace(" ", $"/{year} ");
+            DateTime.TryParseExact(str, "dd/MM/yyyy HH:mm", new CultureInfo("vi-VN"), System.Globalization.DateTimeStyles.None, out dateTime);
+            return dateTime;
+        }
     }
 }
