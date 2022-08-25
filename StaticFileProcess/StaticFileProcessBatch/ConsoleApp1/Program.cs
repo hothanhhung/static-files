@@ -7,6 +7,7 @@ using System.Text;
 using System.Web;
 using System.Globalization;
 using System.IO;
+using System.Net;
 
 namespace ConsoleApp1
 {
@@ -21,7 +22,14 @@ namespace ConsoleApp1
         private static string GetTuViCungHoangDao2(DateTime date)
         {
             string dateOfWeek = date.DayOfWeek == 0 ? "chu-nhat" : $"thu-{(int)date.DayOfWeek + 1}";
-            string url = $"https://xemtuvi.mobi/tu-vi-ngay-{date.Day}-{date.Month}-{date.Year}-cua-12-cung-hoang-dao-{dateOfWeek}.html";
+            string url = $"https://xemtuvi.mobi/tu-vi-ngay-{date.Day}-{date.Month}-{date.Year}-{dateOfWeek}-tu-vi-hang-ngay-cua-12-cung-hoang-dao.html";
+            return url;
+        }
+
+        private static string GetTuViCungHoangDao3(DateTime date)
+        {
+            string dateOfWeek = date.DayOfWeek == 0 ? "chu-nhat" : $"thu-{(int)date.DayOfWeek + 1}";
+            string url = $"https://xemtuvi.mobi/tu-vi-ngay-moi/tu-vi-hang-ngay/xem-boi-tu-vi-{dateOfWeek}-ngay-{date.Day}-{date.Month}-{date.Year}-cua-12-cung-hoang-dao.html";
             return url;
         }
 
@@ -231,7 +239,12 @@ namespace ConsoleApp1
                 congiap = CrawlXemTuVi(GetTuViConGiap(date));
             }
 
-            var cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao2(date));
+
+            var cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao3(date));
+            if (cunghoangDao == null || cunghoangDao.Count == 0)
+            {
+                cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao2(date));
+            }
             if (cunghoangDao == null || cunghoangDao.Count == 0)
             {
                 cunghoangDao = CrawlXemTuVi(GetTuViCungHoangDao(date));
@@ -243,13 +256,19 @@ namespace ConsoleApp1
         {
             var congiap = CrawlXemTuVi($"https://xemtuvi.mobi/tu-vi-hang-thang/tu-vi-thang-{date.Month}-{date.Year}-dong-phuong-cua-12-con-giap.html");
             var cunghoangDao = CrawlXemTuVi($"https://xemtuvi.mobi/tu-vi-hang-thang/tu-vi-thang-{date.Month}-{date.Year}-tay-phuong-cua-12-cung-hoang-dao.html");
+            if (cunghoangDao.Count == 0)
+            {
+                cunghoangDao = CrawlXemTuVi($"https://xemtuvi.mobi/tu-vi-hang-thang/tu-vi-thang-{date.Month}-{date.Year}-cua-12-cung-hoang-dao-song-ngu-rat-vo-tu-hanh-phuc.html");
+            }
             return buildJson(congiap, cunghoangDao, date.ToString("yyyyMM"));
         }
 
         static void Main(string[] args)
-        {
+        {/*
+            CrawlLichThucHienQuyen();
+            return;*/
             //CrawlGioSocTietKhi();
-           // return;
+            // return;
             //var rs = TarotHelper.Parse();
             // var rs = CrawlXemTuViEcotownlongthanh(@"https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/");
             /*
@@ -455,6 +474,49 @@ namespace ConsoleApp1
             }
         }
 
+        private static void CrawlLichThucHienQuyen()
+        {
+            var firstLink = "https://web.vsd.vn/vi/lich-giao-dich?tab=LICH_THQ&date=13/05/2021";
+            var postLink = "https://web.vsd.vn/lich-thq/search";
+            var result = new List<string>();
+            try
+            {
+                CookieContainer cookies = new CookieContainer();
+                HttpClientHandler firsthandler = new HttpClientHandler();
+                firsthandler.CookieContainer = cookies;
+
+                HttpClient firstclient = new HttpClient(firsthandler);
+                HttpResponseMessage firstResponse = firstclient.GetAsync(firstLink).Result;
+
+
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.CookieContainer = cookies;
+
+                HttpClient client = new HttpClient(handler);
+
+                var json = "{\"SearchKey\":\"|||28/03/2021|07/04/2021|VI\",\"CurrentPage\":1,\"RecordOnPage\":10,\"OrderBy\":\"\",\"OrderType\":\"\"}";
+                StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = client.PostAsync(postLink, httpContent).Result;
+
+                //response.
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var years = pageDocument.DocumentNode.SelectNodes("//table");
+                if (years != null)
+                {
+                    foreach (var yearNode in years)
+                    {
+                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
 
         private static DateTime ParseToDateTime(string value, string year)
         {
