@@ -296,6 +296,7 @@ namespace ConsoleApp1
 
         public static string Crawl(int days, int months)
         {
+            return crawlTuViFromTVCNews();
             //return CrawlBoiSoAiCap();
             StringBuilder stringBuilder = new StringBuilder("{\n");
             var date = DateTime.UtcNow.AddHours(7);
@@ -524,6 +525,77 @@ namespace ConsoleApp1
             var str = value.Replace(" ", $"/{year} ");
             DateTime.TryParseExact(str, "dd/MM/yyyy HH:mm", new CultureInfo("vi-VN"), System.Globalization.DateTimeStyles.None, out dateTime);
             return dateTime;
+        }
+
+
+        static string crawlTuViFromTVCNews()
+        {
+            var today = DateTime.Now;
+            var result = new List<string>();
+            var congiap = new List<string>();
+            var cunghoangDao = new List<string>();
+
+            try
+            {
+                HttpClient hc = new HttpClient();
+                HttpResponseMessage response = hc.GetAsync("https://vtcnews.vn/tieu-diem/tu-vi-hom-nay.html").Result;
+
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var contentNodes = pageDocument.DocumentNode.SelectNodes("//article/h3/a").Select(p => p.Attributes["href"].Value);
+                var dayInStr = today.ToString("d-M");
+                var congiapUrl = contentNodes.FirstOrDefault(p => p.Contains("con-giap") && p.Contains(dayInStr));
+                var cunghoangDaoUrl = contentNodes.FirstOrDefault(p => p.Contains("hoang-dao") && p.Contains(dayInStr));
+
+                if (!string.IsNullOrEmpty(congiapUrl)){
+                    congiap = crawlTuViFromTVCNews(congiapUrl);
+                }
+
+                if (!string.IsNullOrEmpty(cunghoangDaoUrl))
+                {
+                    cunghoangDao = crawlTuViFromTVCNews(cunghoangDaoUrl);
+                }
+            }
+            catch { }
+
+            return buildJson(congiap, cunghoangDao, today.ToString("yyyyMMdd"));
+        }
+
+        static new List<string> crawlTuViFromTVCNews(string url)
+        {
+            var result = new List<string>();
+            try
+            {
+                HttpClient hc = new HttpClient();
+                HttpResponseMessage response = hc.GetAsync("https://vtcnews.vn"+ url).Result;
+
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var contentNodes = pageDocument.DocumentNode.SelectNodes("//div[@class='edittor-content box-cont mt15 clearfix ']/p | //div[@class='edittor-content box-cont mt15 clearfix ']/h3");
+                var content = new StringBuilder();
+                for (int i = 0; i < contentNodes.Count - 1; i++)
+                {
+                    if(contentNodes[i].FirstChild != null && contentNodes[i].FirstChild.Name == "strong")
+                    {
+                        if(content.Length > 0)
+                        {
+                            result.Add(content.ToString());
+                            content = new StringBuilder();
+                        }
+                        continue;
+                    }
+                    content.Append("&emsp;" + contentNodes[i].InnerText + "<br/><br/>");
+                }
+                if (content.Length > 0)
+                {
+                    result.Add(content.ToString());
+                }
+            }
+            catch { }
+
+            return result;
         }
     }
 }
