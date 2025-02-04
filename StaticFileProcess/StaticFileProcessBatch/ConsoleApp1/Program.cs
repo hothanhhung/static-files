@@ -39,7 +39,7 @@ namespace ConsoleApp1
             string url = $"https://xemtuvi.mobi/tu-vi-ngay-moi/tu-vi-hang-ngay-12-con-giap/tu-vi-ngay-{date.Day}-{date.Month}-{date.Year}-{dateOfWeek}-cua-12-con-giap.html";
             return url;
         }
-        
+
         private static string GetTuViConGiap2(DateTime date)
         {
             string dateOfWeek = date.DayOfWeek == 0 ? "chu-nhat" : $"thu-{(int)date.DayOfWeek + 1}";
@@ -90,7 +90,7 @@ namespace ConsoleApp1
                         if (h2Count < 4)
                             continue;
 
-                        if(item.Name.Equals("h3"))
+                        if (item.Name.Equals("h3"))
                         {
                             h3Count++;
                             stringBuilder.Append("<b>" + item.InnerText.Replace('"', '“').Trim() + "</b><br/>");
@@ -99,7 +99,7 @@ namespace ConsoleApp1
                         {
                             if (h3Count == 5)
                             {
-                                foreach(var child in item.ChildNodes)
+                                foreach (var child in item.ChildNodes)
                                 {
                                     if (!string.IsNullOrWhiteSpace(child.InnerText))
                                     {
@@ -230,7 +230,7 @@ namespace ConsoleApp1
         private static string CrawlTuVi(DateTime date)
         {
             var congiap = CrawlXemTuVi(GetTuViConGiap3(date));
-            if(congiap == null || congiap.Count == 0)
+            if (congiap == null || congiap.Count == 0)
             {
                 congiap = CrawlXemTuVi(GetTuViConGiap2(date));
             }
@@ -315,7 +315,7 @@ namespace ConsoleApp1
 
         //https://ecotownlongthanh.vn/tu-vi-thang-5-2020-cua-12-cung-hoang-dao/
         //https://phongthuyso.vn/tu-vi-thang-5-2020-cua-12-con-giap.html
-		// https://tuviso.com/tu-vi-cung-song-ngu-nam-2021.html
+        // https://tuviso.com/tu-vi-cung-song-ngu-nam-2021.html
 
         ////https://phongthuyso.vn/boi-ai-cap.html
 
@@ -323,11 +323,11 @@ namespace ConsoleApp1
         {
             var strBuilder = new StringBuilder();
 
-             strBuilder.AppendLine($"\"BoiSoAiCap\": {{");
-            for (int i = 0; i< 9; i++)
+            strBuilder.AppendLine($"\"BoiSoAiCap\": {{");
+            for (int i = 0; i < 9; i++)
             {
-                var rs = CrawlBoiSoAiCap((char) ('A'+i));
-                strBuilder.AppendLine($"    \"So{i+1}\":\"{rs}\",");
+                var rs = CrawlBoiSoAiCap((char)('A' + i));
+                strBuilder.AppendLine($"    \"So{i + 1}\":\"{rs}\",");
             }
             strBuilder.Append("    }");
 
@@ -370,7 +370,7 @@ namespace ConsoleApp1
                             stringBuilder.Append("&emsp;" + item.ChildNodes[0].ChildNodes[0].InnerText + "<br/><br/>");
                         }
                     }
-                    return stringBuilder.ToString().Replace("\"", "'").Replace("<br>",string.Empty).Trim();
+                    return stringBuilder.ToString().Replace("\"", "'").Replace("<br>", string.Empty).Trim();
                 }
             }
             catch (Exception ex)
@@ -392,7 +392,7 @@ namespace ConsoleApp1
             }
 
             var ngaySocBuilder = new StringBuilder("{\n");
-            foreach(var group in ngaySoc.GroupBy(p=>p.Year))
+            foreach (var group in ngaySoc.GroupBy(p => p.Year))
             {
                 ngaySocBuilder.Append($"\"{group.Key}\": [");
                 for (var i = 0; i < group.Count(); i++)
@@ -445,16 +445,16 @@ namespace ConsoleApp1
                 var years = pageDocument.DocumentNode.SelectNodes("//table");
                 if (years != null)
                 {
-                    foreach(var yearNode in years)
+                    foreach (var yearNode in years)
                     {
                         var trs = yearNode.SelectNodes("tr");
                         if (trs == null || trs.Count < 1) continue;
                         var year = trs[0].InnerText;
-                        for(var i = 2; i < trs.Count; i++)
+                        for (var i = 2; i < trs.Count; i++)
                         {
                             var child = trs[i];
                             var tds = child.SelectNodes("td");
-                            if (tds == null || tds.Count < 2 ) continue;
+                            if (tds == null || tds.Count < 2) continue;
                             var soc = HttpUtility.HtmlDecode(tds[0].InnerText).Trim();
                             var tietkhi = HttpUtility.HtmlDecode(tds[1].InnerText.Trim());
                             var tietkhiItems = tietkhi.Split('-');
@@ -470,7 +470,7 @@ namespace ConsoleApp1
                     }
                 }
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 Console.WriteLine(ex);
             }
         }
@@ -509,7 +509,7 @@ namespace ConsoleApp1
                 {
                     foreach (var yearNode in years)
                     {
-                        
+
                     }
                 }
             }
@@ -538,26 +538,54 @@ namespace ConsoleApp1
             try
             {
                 HttpClient hc = new HttpClient();
+                hc.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
+
                 HttpResponseMessage response = hc.GetAsync("https://vtcnews.vn/tieu-diem/tu-vi-hom-nay.html").Result;
 
                 var pageContents = response.Content.ReadAsStringAsync().Result;
                 HtmlDocument pageDocument = new HtmlDocument();
                 pageDocument.LoadHtml(pageContents);
                 var contentNodes = pageDocument.DocumentNode.SelectNodes("//article/h3/a").Select(p => p.Attributes["href"].Value);
-                var dayInStr = today.ToString("d-M");
-                var congiapUrl = contentNodes.FirstOrDefault(p => p.Contains("con-giap") && p.Contains(dayInStr));
-                var cunghoangDaoUrl = contentNodes.FirstOrDefault(p => p.Contains("hoang-dao") && p.Contains(dayInStr));
+                var dayInStr = today.Day.ToString();
+                var congiapUrl = contentNodes.FirstOrDefault(p => p.Contains("con-giap") && (p.Contains("-" + dayInStr + "-") || p.Contains("-0" + dayInStr + "-")));
+                var cunghoangDaoUrl = contentNodes.FirstOrDefault(p => p.Contains("hoang-dao") && (p.Contains("-" + dayInStr + "-") || p.Contains("-0" + dayInStr + "-")));
 
-                if (!string.IsNullOrEmpty(congiapUrl)){
+                if (!string.IsNullOrEmpty(congiapUrl)) {
                     congiap = crawlTuViFromTVCNews(congiapUrl);
+                }
+                else
+                {
+                    var urlTuvi = getFirstPostUrlTuViFromTuViVN("https://tuvi.vn/category/tu-vi-hang-ngay");
+                    if (!string.IsNullOrEmpty(urlTuvi))
+                    {
+                        congiap = crawlTuViFromTuViVN("https://tuvi.vn" + urlTuvi);
+                    }
+                    if (congiap.Count != 12)
+                    {
+                        congiap = Enumerable.Repeat("", 12).ToList();
+                    }
                 }
 
                 if (!string.IsNullOrEmpty(cunghoangDaoUrl))
                 {
                     cunghoangDao = crawlTuViFromTVCNews(cunghoangDaoUrl);
                 }
+                else
+                {
+                    var urlTuvi = getFirstPostUrlTuViFromTuViVN("https://tuvi.vn/category/12-cung-hoang-dao-hang-ngay");
+                    if (!string.IsNullOrEmpty(urlTuvi))
+                    {
+                        cunghoangDao = crawlTuViFromTuViVN("https://tuvi.vn" + urlTuvi, "h3");
+                    }
+                    if (cunghoangDao.Count != 12)
+                    {
+                        cunghoangDao = Enumerable.Repeat("", 12).ToList();
+                    }
+                }
             }
-            catch { }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
 
             return buildJson(congiap, cunghoangDao, today.ToString("yyyyMMdd"));
         }
@@ -568,7 +596,8 @@ namespace ConsoleApp1
             try
             {
                 HttpClient hc = new HttpClient();
-                HttpResponseMessage response = hc.GetAsync("https://vtcnews.vn"+ url).Result;
+                hc.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
+                HttpResponseMessage response = hc.GetAsync("https://vtcnews.vn" + url).Result;
 
                 var pageContents = response.Content.ReadAsStringAsync().Result;
                 HtmlDocument pageDocument = new HtmlDocument();
@@ -577,9 +606,9 @@ namespace ConsoleApp1
                 var content = new StringBuilder();
                 for (int i = 0; i < contentNodes.Count - 1; i++)
                 {
-                    if(contentNodes[i].FirstChild != null && contentNodes[i].FirstChild.Name == "strong")
+                    if (contentNodes[i].FirstChild != null && contentNodes[i].FirstChild.Name == "strong")
                     {
-                        if(content.Length > 0)
+                        if (content.Length > 0)
                         {
                             result.Add(content.ToString());
                             content = new StringBuilder();
@@ -593,7 +622,96 @@ namespace ConsoleApp1
                     result.Add(content.ToString());
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return result;
+        }
+
+        static string getFirstPostUrlTuViFromTuViVN(string url)
+        {
+            try
+            {
+                HttpClient hc = new HttpClient();
+                hc.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
+                HttpResponseMessage response = hc.GetAsync(url).Result;
+
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var contentNodes = pageDocument.DocumentNode.SelectNodes("//div[@class='post-first-item']/a");
+                if (contentNodes != null && contentNodes.Count > 0)
+                {
+                    return contentNodes[0].GetAttributeValue("href", "");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return null;
+        }
+        static new List<string> crawlTuViFromTuViVN(string url, string startChar = "h2")
+        {
+            var result = new List<string>();
+            try
+            {
+                HttpClient hc = new HttpClient();
+                hc.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
+                HttpResponseMessage response = hc.GetAsync(url).Result;
+
+                var pageContents = response.Content.ReadAsStringAsync().Result;
+                HtmlDocument pageDocument = new HtmlDocument();
+                pageDocument.LoadHtml(pageContents);
+                var contentNodes = pageDocument.DocumentNode.SelectNodes("//div[@class='text-p post-content']");
+                var content = new StringBuilder();
+                if (contentNodes != null && contentNodes.Count > 0)
+                {
+                    var contentNode = contentNodes[0];
+                    var read = false;
+                    var tuviContent = new StringBuilder();
+                    foreach (var item in contentNode.ChildNodes)
+                    {
+                        if (item.Name == startChar)
+                        {
+                            if (read)
+                            {
+                                result.Add(tuviContent.ToString());
+                            }
+                            tuviContent = new StringBuilder();
+                            read = true;
+                            continue;
+                        }
+
+                        if (read)
+                        {
+                            if (item.Name == "p")
+                            {
+                                tuviContent.Append("<br/><br/>&emsp;").Append(item.InnerText);
+                            }
+                            else if (item.Name == "ul")
+                            {
+                                foreach (var it in item.ChildNodes)
+                                {
+                                    tuviContent.Append("<br/><br/>&emsp;").Append(it.InnerText);
+                                }
+                            }
+                        }
+                    }
+
+                    if (tuviContent.Length > 0)
+                    {
+                        result.Add(tuviContent.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             return result;
         }
