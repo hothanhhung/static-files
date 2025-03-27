@@ -530,6 +530,7 @@ namespace ConsoleApp1
 
         static string crawlTuViFromTVCNews()
         {
+            var error = false;
             var today = DateTime.Now;
             var result = new List<string>();
             var congiap = new List<string>();
@@ -537,6 +538,7 @@ namespace ConsoleApp1
 
             try
             {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 HttpClient hc = new HttpClient();
                 hc.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
 
@@ -547,22 +549,26 @@ namespace ConsoleApp1
                 pageDocument.LoadHtml(pageContents);
                 var contentNodes = pageDocument.DocumentNode.SelectNodes("//article/h3/a").Select(p => p.Attributes["href"].Value);
                 var dayInStr = today.Day.ToString();
-                var congiapUrl = contentNodes.FirstOrDefault(p => p.Contains("con-giap") && (p.Contains("-" + dayInStr + "-") || p.Contains("-0" + dayInStr + "-")));
-                var cunghoangDaoUrl = contentNodes.FirstOrDefault(p => p.Contains("hoang-dao") && (p.Contains("-" + dayInStr + "-") || p.Contains("-0" + dayInStr + "-")));
+                var comparedDayInStr1 = "y-" + dayInStr + "-";
+                var comparedDayInStr01 = "y-0" + dayInStr + "-";
+                var congiapUrl = contentNodes.FirstOrDefault(p => p.Contains("con-giap") && (p.Contains(comparedDayInStr1) || p.Contains(comparedDayInStr01)));
+                var cunghoangDaoUrl = contentNodes.FirstOrDefault(p => p.Contains("hoang-dao") && (p.Contains(comparedDayInStr1) || p.Contains(comparedDayInStr01)));
 
-                if (!string.IsNullOrEmpty(congiapUrl)) {
+                if (!string.IsNullOrEmpty(congiapUrl))
+                {
                     congiap = crawlTuViFromTVCNews(congiapUrl);
                 }
                 else
                 {
                     var urlTuvi = getFirstPostUrlTuViFromTuViVN("https://tuvi.vn/category/tu-vi-hang-ngay");
-                    if (!string.IsNullOrEmpty(urlTuvi))
+                    if (!string.IsNullOrEmpty(urlTuvi) && (urlTuvi.Contains(comparedDayInStr1) || urlTuvi.Contains(comparedDayInStr01)))
                     {
                         congiap = crawlTuViFromTuViVN("https://tuvi.vn" + urlTuvi);
                     }
                     if (congiap.Count != 12)
                     {
                         congiap = Enumerable.Repeat("", 12).ToList();
+                        error = true;
                     }
                 }
 
@@ -573,13 +579,14 @@ namespace ConsoleApp1
                 else
                 {
                     var urlTuvi = getFirstPostUrlTuViFromTuViVN("https://tuvi.vn/category/12-cung-hoang-dao-hang-ngay");
-                    if (!string.IsNullOrEmpty(urlTuvi))
+                    if (!string.IsNullOrEmpty(urlTuvi) && (urlTuvi.Contains(comparedDayInStr1) || urlTuvi.Contains(comparedDayInStr01)))
                     {
                         cunghoangDao = crawlTuViFromTuViVN("https://tuvi.vn" + urlTuvi, "h3");
                     }
                     if (cunghoangDao.Count != 12)
                     {
                         cunghoangDao = Enumerable.Repeat("", 12).ToList();
+                        error = true;
                     }
                 }
             }
