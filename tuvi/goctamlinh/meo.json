@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "title": "Phòng Ngủ - Gương Soi",
+        "icon": "fa-bed",
+        "color": "text-blue-800",
+        "content": "Đại kỵ để gương chiếu thẳng vào giường ngủ. Gương phản chiếu khí, gây ác mộng, mất ngủ và ảnh hưởng xấu đến tình cảm vợ chồng. Nếu không thể di chuyển, hãy dùng rèm che gương lại khi ngủ."
+    },
+    {
+        "id": 2,
+        "title": "Phòng Ngủ - Đầu Giường",
+        "icon": "fa-bed",
+        "color": "text-blue-800",
+        "content": "Đầu giường cần có điểm tựa vững chắc (kê sát tường). Tránh kê giường lơ lửng giữa phòng. Không kê đầu giường ngay dưới cửa sổ (khí xung) hoặc dưới xà ngang (bị đè nén)."
+    },
+    {
+        "id": 3,
+        "title": "Phòng Ngủ - Gầm Giường",
+        "icon": "fa-box-open",
+        "color": "text-gray-600",
+        "content": "Gầm giường phải thông thoáng. Tuyệt đối không nhét đồ đạc lộn xộn, giày dép hay đồ kim loại rỉ sét dưới gầm giường. Điều này gây ứ đọng khí xấu, ảnh hưởng sức khỏe người nằm trên."
+    },
+    {
+        "id": 4,
+        "title": "Bếp Nấu - Thủy Hỏa Xung",
+        "icon": "fa-fire",
+        "color": "text-red-800",
+        "content": "Bếp (Hỏa) và bồn rửa/tủ lạnh (Thủy) không được đặt sát nhau. Nên cách nhau tối thiểu 60cm. Nếu không gian chật, hãy đặt một chậu cây xanh nhỏ ở giữa để hóa giải (Thủy sinh Mộc, Mộc sinh Hỏa)."
+    },
+    {
+        "id": 5,
+        "title": "Bếp Nấu - Cửa Nhà Vệ Sinh",
+        "icon": "fa-toilet",
+        "color": "text-red-800",
+        "content": "Cửa bếp không được đối diện thẳng cửa nhà vệ sinh. Uế khí từ nhà vệ sinh sẽ ám vào thức ăn, gây bệnh tật và hao tài tốn của. Luôn đóng cửa vệ sinh khi không dùng."
+    },
+    {
+        "id": 6,
+        "title": "Bếp Nấu - Dưới Xà Ngang",
+        "icon": "fa-bars",
+        "color": "text-red-800",
+        "content": "Không đặt bếp nấu ngay dưới xà ngang trần nhà. Điều này gọi là 'Xà ngang ép đỉnh', khiến nữ chủ nhà hay ốm đau, tinh thần bất ổn."
+    },
+    {
+        "id": 7,
+        "title": "Cửa Chính - Xuyên Tâm Sát",
+        "icon": "fa-door-open",
+        "color": "text-purple-800",
+        "content": "Cửa chính không nên thông thẳng một đường với cửa hậu. Tiền bạc vào cửa trước sẽ ra ngay cửa sau, không tụ được tài. Hãy dùng bình phong, rèm hoặc chậu cây lớn chắn ở giữa dòng khí."
+    },
+    {
+        "id": 8,
+        "title": "Cửa Chính - Gương Đối Diện",
+        "icon": "fa-mirror",
+        "color": "text-purple-800",
+        "content": "Không treo gương đối diện ngay cửa ra vào. Gương sẽ phản xạ, đẩy hết tài lộc và vượng khí ra khỏi nhà ngay khi vừa bước vào."
+    },
+    {
+        "id": 9,
+        "title": "Cửa Chính - Giày Dép",
+        "icon": "fa-shoe-prints",
+        "color": "text-purple-800",
+        "content": "Khu vực cửa chính (Huyền quan) phải luôn sạch sẽ, sáng sủa. Không để giày dép lộn xộn chắn lối đi, nên dùng tủ giày kín để tránh mùi hôi xua đuổi Thần Tài."
+    },
+    {
+        "id": 10,
+        "title": "Ban Thờ - Vị Trí Kỵ",
+        "icon": "fa-vihara",
+        "color": "text-yellow-800",
+        "content": "Không đặt ban thờ dựa lưng vào tường nhà vệ sinh hoặc nằm dưới phòng vệ sinh (với nhà lầu). Không đặt ban thờ trong phòng ngủ vợ chồng."
+    },
+    {
+        "id": 11,
+        "title": "Ban Thờ - Hướng Nhìn",
+        "icon": "fa-compass",
+        "color": "text-yellow-800",
+        "content": "Ban thờ nên quay về hướng tốt hợp tuổi gia chủ (Sinh Khí, Thiên Y). Tránh đặt ban thờ nhìn thẳng ra hướng Ngũ Quỷ."
+    },
+    {
+        "id": 12,
+        "title": "Phòng Khách - Sofa",
+        "icon": "fa-couch",
+        "color": "text-green-800",
+        "content": "Ghế sofa chủ nhà nên đặt dựa lưng vào tường tạo thế 'Tựa Sơn' vững chãi, giúp sự nghiệp thăng tiến, có quý nhân phù trợ. Tránh kê ghế quay lưng ra cửa chính."
+    },
+    {
+        "id": 13,
+        "title": "Phòng Khách - Cây Xanh",
+        "icon": "fa-leaf",
+        "color": "text-green-600",
+        "content": "Nên trồng các loại cây lá tròn, to, mọng nước (Kim Tiền, Trầu Bà, Kim Ngân) để hút tài lộc. Tuyệt đối tránh cây có gai nhọn (Xương rồng) hoặc cây có tính âm quá mạnh trong phòng khách."
+    },
+    {
+        "id": 14,
+        "title": "Tài Lộc - Hũ Gạo",
+        "icon": "fa-utensils",
+        "color": "text-yellow-600",
+        "content": "Hũ gạo tượng trưng cho kho lương thực. Nên dùng hũ sành sứ/gốm, đậy kín nắp, đặt ở nơi kín đáo. Không để hũ gạo trống rỗng, nên đổ đầy khi vơi một nửa."
+    },
+    {
+        "id": 15,
+        "title": "Tài Lộc - Két Sắt",
+        "icon": "fa-lock",
+        "color": "text-yellow-600",
+        "content": "Két sắt nên đặt ở cung Tài Lộc (thường là góc chéo với cửa chính) hoặc hướng hợp mệnh. Bên trong có thể đặt Thiềm Thừ (Cóc 3 chân) hoặc đồng tiền hoa mai để kích hoạt."
+    },
+    {
+        "id": 16,
+        "title": "Văn Phòng - Bàn Làm Việc",
+        "icon": "fa-briefcase",
+        "color": "text-blue-600",
+        "content": "Bàn làm việc không nên quay lưng ra cửa (bị động, dễ bị tiểu nhân đâm sau lưng) hoặc quay mặt vào tường (bế tắc). Tốt nhất là ngồi nhìn ra cửa nhưng chệch đi một chút."
+    },
+    {
+        "id": 17,
+        "title": "Văn Phòng - Máy Tính",
+        "icon": "fa-laptop",
+        "color": "text-blue-600",
+        "content": "Nên để máy tính hoặc các vật dụng động (điện thoại, máy in) ở bên trái (Thanh Long) của bàn làm việc để kích hoạt năng lượng tích cực."
+    },
+    {
+        "id": 18,
+        "title": "Nhà Vệ Sinh - Nước",
+        "icon": "fa-tint",
+        "color": "text-cyan-600",
+        "content": "Vòi nước rò rỉ trong nhà vệ sinh tượng trưng cho việc thất thoát tiền bạc. Cần sửa chữa ngay lập tức. Luôn đậy nắp bồn cầu trước khi xả nước để tránh uế khí bay ra."
+    },
+    {
+        "id": 19,
+        "title": "Cầu Thang - Lao Cung",
+        "icon": "fa-stream",
+        "color": "text-gray-700",
+        "content": "Chân cầu thang không được hướng thẳng ra cửa chính. Khí sẽ theo cầu thang lao thẳng ra ngoài (Thoái tài). Hóa giải bằng cách đặt chậu cây hoặc bình phong chắn."
+    },
+    {
+        "id": 20,
+        "title": "Vật Phẩm - Hồ Cá",
+        "icon": "fa-fish",
+        "color": "text-blue-400",
+        "content": "Hồ cá kích hoạt tài lộc rất tốt (Thủy tụ tài), nhưng cần đặt đúng vị trí (thường là hướng Bắc hoặc Đông Nam). Không đặt hồ cá trong phòng ngủ hoặc dưới ban thờ (Chính thần hạ thủy - đại họa)."
+    }
+]

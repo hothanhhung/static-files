@@ -1,0 +1,81 @@
+{
+  "1-1": {
+    "eventName": "Tết Nguyên Đán",
+    "description": "Lễ hội lớn nhất và quan trọng nhất, đánh dấu sự khởi đầu của năm mới. Là dịp để gia đình sum họp, tưởng nhớ tổ tiên.",
+    "customs": [
+      "Cúng Giao thừa, xông đất đầu năm.",
+      "Chúc Tết, mừng tuổi (lì xì) người già và trẻ nhỏ.",
+      "Đi lễ chùa cầu an, hái lộc."
+    ]
+  },
+  "1-15": {
+    "eventName": "Tết Nguyên Tiêu (Rằm Tháng Giêng)",
+    "description": "Ngày Rằm đầu tiên của năm, còn gọi là Lễ Thượng Nguyên. Người Việt quan niệm 'Cúng cả năm không bằng Rằm tháng Giêng'.",
+    "customs": [
+      "Đi chùa lễ Phật, cúng sao giải hạn.",
+      "Ăn chay, thả đèn hoa đăng cầu nguyện.",
+      "Ăn chè trôi nước (ý nghĩa mọi việc trôi chảy)."
+    ]
+  },
+  "3-3": {
+    "eventName": "Tết Hàn Thực",
+    "description": "Ngày lễ ăn đồ lạnh (hàn thực) để tưởng nhớ người xưa. Tại Việt Nam, ngày này mang ý nghĩa hướng về cội nguồn.",
+    "customs": [
+      "Làm bánh trôi, bánh chay dâng cúng tổ tiên.",
+      "Kiêng đốt lửa trong một số nghi thức cổ (hiện nay ít phổ biến)."
+    ]
+  },
+  "3-10": {
+    "eventName": "Giỗ Tổ Hùng Vương",
+    "description": "Quốc lễ của Việt Nam tưởng nhớ công ơn dựng nước của các Vua Hùng.",
+    "customs": [
+      "Dâng hương hoa, bánh chưng, bánh giầy.",
+      "Hành hương về Đền Hùng (Phú Thọ)."
+    ]
+  },
+  "4-15": {
+    "eventName": "Lễ Phật Đản",
+    "description": "Ngày kỷ niệm Đức Phật Thích Ca Mâu Ni ra đời. Đây là đại lễ của Phật giáo.",
+    "customs": [
+      "Lễ tắm Phật tại chùa.",
+      "Ăn chay, phóng sinh, làm việc thiện.",
+      "Trang trí đèn lồng, cờ hoa tại gia đình Phật tử."
+    ]
+  },
+  "5-5": {
+    "eventName": "Tết Đoan Ngọ",
+    "description": "Còn gọi là Tết diệt sâu bọ. Thời điểm này dương khí cực thịnh, người dân làm lễ để cầu mùa màng bội thu, sức khỏe an khang.",
+    "customs": [
+      "Ăn cơm rượu nếp, trái cây chua (mận, vải) ngay khi ngủ dậy.",
+      "Tắm nước lá mùi để tẩy uế.",
+      "Khảo cây (đánh vào gốc cây) để mong cây ra trái."
+    ]
+  },
+  "7-15": {
+    "eventName": "Lễ Vu Lan (Xá Tội Vong Nhân)",
+    "description": "Ngày báo hiếu cha mẹ và xá tội cho các vong linh không nơi nương tựa.",
+    "customs": [
+      "Cài hoa hồng lên áo (bông đỏ cho ai còn mẹ, bông trắng cho ai mất mẹ).",
+      "Cúng chúng sinh (cúng cô hồn) cháo loãng, gạo muối.",
+      "Phóng sinh chim, cá."
+    ]
+  },
+  "8-15": {
+    "eventName": "Tết Trung Thu",
+    "description": "Tết thiếu nhi, ngày trăng sáng nhất trong năm. Là dịp vui chơi của trẻ em và gia đình quây quần uống trà thưởng trăng.",
+    "customs": [
+      "Rước đèn ông sao, múa lân.",
+      "Phá cỗ, ăn bánh nướng, bánh dẻo.",
+      "Ngắm trăng (thưởng nguyệt)."
+    ]
+  },
+  "12-23": {
+    "eventName": "Tết Ông Công Ông Táo",
+    "description": "Ngày tiễn Táo Quân (thần Bếp) về trời báo cáo tình hình gia chủ trong năm qua với Ngọc Hoàng.",
+    "customs": [
+      "Cúng cá chép (phương tiện để Táo quân cưỡi về trời).",
+      "Thả cá chép ra sông hồ sau khi cúng.",
+      "Dọn dẹp ban thờ, tỉa chân nhang."
+    ]
+  }
+}
