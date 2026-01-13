@@ -1,7 +1,15 @@
 ﻿{
-  "Version": 2020042103,
+  "Version": 2026011301,
   "DenyLinks": [
-
+	"https://static.eclick.vn",
+	"shopeevn://reactPath",
+	"doubleclick.net",
+	"/ads/ga-audiences",
+	"ads.pubmatic.com",
+	"doubleclick.net",
+	"amazon-adsystem.com",
+	"adsbygoogle",
+	"adsrvr.org"
   ],
   "CSSWebs": [
     {
