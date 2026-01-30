@@ -1,5 +1,5 @@
 ﻿{
-  "Version": 2026011301,
+  "Version": 2026013001,
   "DenyLinks": [
 	"https://static.eclick.vn",
 	"shopeevn://reactPath",
@@ -11,7 +11,23 @@
 	"adsbygoogle",
 	"adsrvr.org",
 	"show_ads_",
-	"adsds.js"
+	"adsds.js",
+	"adtima",
+	"static.criteo.net",
+	"gpt.js",
+	"quangcao.",
+	"netcoresmartech",
+	"admicro.vn",
+	"eclick.vn",
+	"ants.vn",
+	"googleadservices.com",
+	"googlesyndication.com",
+	"2mdn.net",
+	"connect.facebook.net",
+	"pubmatic.com",
+	"taboola.com",
+	"outbrain.com",
+	"mgid.com"
   ],
   "CSSWebs": [
     {
