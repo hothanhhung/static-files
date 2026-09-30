@@ -36,7 +36,7 @@
     },
     {
       "Name": "VNExpress.Net",
-      "CSS": ".adsbygoogle, [class^='banner_mobile'], #admbackground, [id^='LARGE_BANNER'], iframe[class^='ad']{display:none !important;} #myvne_taskbar, .btn_control_col_left {top:0px !important;}"
+      "CSS": ".adsbygoogle, #banner_top, #sis_sticky, .vne_footer_ads, #ads_large_detail, .ad_by_eclick, [class^='banner_mobile'], #admbackground, [id^='LARGE_BANNER'], iframe[class^='ad']{display:none !important;} #myvne_taskbar, .btn_control_col_left {top:0px !important;}"
     },
     {
       "Name": "NLD.Com.VN",
